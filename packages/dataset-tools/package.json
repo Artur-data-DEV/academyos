@@ -12,12 +12,18 @@
     "import:questions:ready": "node scripts/import-questions.mjs --source CSA_EXAMTOPICS_READY.json",
     "import:questions:dump": "node scripts/import-questions.mjs --source CSA_EXAMTOPICS_FROM_DUMP.json",
     "audit:questions": "node scripts/audit-questions.mjs",
-    "build:dump": "python scripts/build_dataset_from_dump.py --dump-dir \"data/raw-examtopics/01 - ExamTopics/01 - Respostas\" --existing-json \"CSA_EXAMTOPICS.json\" --output \"CSA_EXAMTOPICS_FROM_DUMP.json\" --cache-dir \"data/ocr-cache\" --scale 1.4"
+    "build:dump": "python scripts/build_dataset_from_dump.py --dump-dir \"data/raw-examtopics/01 - ExamTopics/01 - Respostas\" --existing-json \"CSA_EXAMTOPICS.json\" --output \"CSA_EXAMTOPICS_FROM_DUMP.json\" --cache-dir \"data/ocr-cache\" --scale 1.4",
+    "migrate:supabase": "tsx scripts/migrate-from-supabase.ts"
   },
   "dependencies": {
+    "@academyos/database": "workspace:*",
     "axios": "^1.16.1",
     "cheerio": "^1.2.0",
     "pdf-parse": "^2.4.5",
     "playwright": "^1.60.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.0.0",
+    "tsx": "^4.22.4"
   }
 }

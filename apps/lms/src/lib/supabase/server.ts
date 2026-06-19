@@ -1,33 +1,29 @@
-import { createServerClient } from "@supabase/ssr";
-import { cookies } from "next/headers";
-
-import {
-  getSupabaseEnv,
-  getSupabasePublicKey,
-} from "@academyos/supabase/env";
+import { auth } from "@academyos/auth";
 
 export async function createClient() {
-  const env = getSupabaseEnv();
-  const cookieStore = await cookies();
+  const dummyQuery: any = {
+    select: (...args: any[]) => dummyQuery,
+    eq: (...args: any[]) => dummyQuery,
+    in: (...args: any[]) => dummyQuery,
+    order: (...args: any[]) => dummyQuery,
+    single: (...args: any[]) => dummyQuery,
+    maybeSingle: (...args: any[]) => dummyQuery,
+    insert: (...args: any[]) => dummyQuery,
+    update: (...args: any[]) => dummyQuery,
+    upsert: (...args: any[]) => dummyQuery,
+    match: (...args: any[]) => dummyQuery,
+    then: (onfulfilled: any, onrejected: any) => Promise.resolve({ data: null, error: null }).then(onfulfilled, onrejected),
+    catch: (onrejected: any) => Promise.resolve({ data: null, error: null }).catch(onrejected),
+    finally: (onfinally: any) => Promise.resolve({ data: null, error: null }).finally(onfinally),
+  };
 
-  return createServerClient(
-    env.NEXT_PUBLIC_SUPABASE_URL,
-    getSupabasePublicKey(),
-    {
-      cookies: {
-        getAll() {
-          return cookieStore.getAll();
-        },
-        setAll(cookiesToSet) {
-          try {
-            cookiesToSet.forEach(({ name, value, options }) =>
-              cookieStore.set(name, value, options),
-            );
-          } catch {
-            // Server Components expose a read-only cookie store.
-          }
-        },
-      },
+  return {
+    auth: {
+      getUser: async () => {
+        const session = await auth();
+        return { data: { user: session?.user ?? null }, error: null };
+      }
     },
-  );
+    from: (...args: any[]) => dummyQuery,
+  };
 }

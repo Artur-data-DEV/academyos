@@ -136,12 +136,17 @@ model Assessment {
 }
 
 model Question {
-  id          String   @id @default(uuid())
-  content     String
-  options     Json     // Ex: [{ id: "A", text: "Opção A", isCorrect: true }]
-  explanation String?
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  id             String   @id @default(uuid())
+  legacyId       BigInt?  @unique
+  sourceId       BigInt?
+  topic          String   @default("general")
+  questionType   String   @default("single_choice")
+  content        String
+  correctAnswers String[]
+  options        Json
+  explanation    String?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
 }
 
 model Attempt {

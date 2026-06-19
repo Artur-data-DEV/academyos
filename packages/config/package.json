@@ -5,8 +5,8 @@
   "type": "module",
   "exports": {
     "./eslint/next": "./eslint/next.mjs",
-    "./tsconfig/base": "./tsconfig/base.json",
-    "./tsconfig/next": "./tsconfig/next.json"
+    "./tsconfig/base.json": "./tsconfig/base.json",
+    "./tsconfig/next.json": "./tsconfig/next.json"
   },
   "dependencies": {
     "eslint-config-next": "16.2.9"

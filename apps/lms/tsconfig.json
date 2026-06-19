@@ -1,6 +1,7 @@
 {
-  "extends": "@academyos/config/tsconfig/next",
+  "extends": "@academyos/config/tsconfig/next.json",
   "compilerOptions": {
+    "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]

@@ -1,5 +1,5 @@
 {
-  "extends": "@academyos/config/tsconfig/base",
+  "extends": "@academyos/config/tsconfig/base.json",
   "compilerOptions": {
     "jsx": "react-jsx"
   },

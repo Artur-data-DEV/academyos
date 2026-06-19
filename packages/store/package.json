@@ -1,0 +1,17 @@
+{
+  "name": "@academyos/store",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./simulator": "./src/simulator-store.ts"
+  },
+  "dependencies": {
+    "zustand": "^5.0.3"
+  },
+  "devDependencies": {
+    "@academyos/config": "workspace:*",
+    "typescript": "^5.9.3",
+    "@types/node": "^20.19.25"
+  }
+}

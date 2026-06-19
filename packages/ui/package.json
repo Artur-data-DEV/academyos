@@ -4,19 +4,29 @@
   "private": true,
   "type": "module",
   "exports": {
+    "./badge": "./src/badge.tsx",
     "./button": "./src/button.tsx",
+    "./card": "./src/card.tsx",
+    "./markdown": "./src/markdown-text.tsx",
+    "./progress": "./src/progress.tsx",
     "./utils": "./src/utils.ts"
   },
   "dependencies": {
+    "@radix-ui/react-progress": "^1.1.2",
+    "@radix-ui/react-slot": "^1.1.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "radix-ui": "^1.6.0",
+    "react-markdown": "^10.1.0",
+    "rehype-raw": "^7.0.0",
+    "remark-gfm": "^4.0.1",
     "tailwind-merge": "^3.6.0"
   },
   "peerDependencies": {
     "react": "19.2.4"
   },
   "devDependencies": {
+    "@academyos/config": "workspace:*",
     "@types/react": "^19.2.7",
     "typescript": "^5.9.3"
   },

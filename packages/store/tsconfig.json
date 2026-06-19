@@ -1,0 +1,9 @@
+{
+  "extends": "@academyos/config/tsconfig/base.json",
+  "compilerOptions": {
+    "module": "Preserve",
+    "moduleResolution": "bundler"
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
+}

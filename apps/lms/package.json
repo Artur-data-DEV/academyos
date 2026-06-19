@@ -14,6 +14,7 @@
   "dependencies": {
     "@academyos/auth": "workspace:*",
     "@academyos/database": "workspace:*",
+    "@academyos/store": "workspace:*",
     "@academyos/types": "workspace:*",
     "@academyos/ui": "workspace:*",
     "@tailwindcss/typography": "^0.5.19",
@@ -26,6 +27,8 @@
     "react-dom": "19.2.4",
     "react-markdown": "^10.1.0",
     "remark-gfm": "^4.0.0",
+    "remark-parse": "^11.0.0",
+    "unified": "^11.0.5",
     "zod": "^4.3.6"
   },
   "devDependencies": {
