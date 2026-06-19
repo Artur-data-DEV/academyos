@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AcademyOS Monorepo
 
-## Getting Started
+Plataforma EdTech B2B/B2C focada em Certificações de TI (AWS, Azure, ServiceNow), unificando um **LMS (Portal do Aluno)** e um **Simulador Adaptativo**.
 
-First, run the development server:
+## Estrutura do Projeto
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- `apps/lms`: O portal web construído com Next.js 16+. Gerencia Trilhas, Módulos, Aulas (via Tiptap) e a vitrine.
+- `apps/simulator`: O motor de avaliação que lê o banco de questões e registra `Attempts` diretamente via Server Actions, integrado ao LMS via sessão compartilhada.
+- `packages/database`: Prisma + PostgreSQL Neon.
+- `packages/auth`: Auth.js (NextAuth v5) com controle de papéis (ADMIN, INSTRUCTOR, STUDENT).
+- `content/`: Scripts e conjuntos de dados brutos (`.json`, `.vcex`) usados para alimentar o banco de questões localmente.
+- `skills/` e `specs/`: Documentações técnicas do repositório para onboarding de desenvolvedores e agentes de IA.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Como Iniciar (Desenvolvimento)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Pré-requisitos
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Node.js 18+ e [pnpm](https://pnpm.io/) v10+
+- Docker & docker-compose (para o banco local)
 
-## Learn More
+### Passos
 
-To learn more about Next.js, take a look at the following resources:
+1. Suba o banco de dados:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```bash
+   cd infra/docker
+   docker-compose up -d
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. Instale as dependências:
 
-## Deploy on Vercel
+   ```bash
+   pnpm install
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. Rode as migrations e gere os clients:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   ```bash
+   pnpm --filter @academyos/database db:push
+   pnpm --filter @academyos/database db:generate
+   ```
+
+4. Inicie o ambiente de desenvolvimento usando o Turborepo:
+
+   ```bash
+   pnpm dev
+   ```
+
+   - O LMS ficará disponível em `http://localhost:3000`
+   - O Simulador ficará disponível em `http://localhost:3001`
+
+Para visualizar os dados do Prisma de forma visual, você pode rodar `pnpm --filter @academyos/database db:studio`.

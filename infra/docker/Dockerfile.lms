@@ -1,0 +1,53 @@
+FROM node:18-alpine AS base
+
+# Install dependencies only when needed
+FROM base AS deps
+RUN apk add --no-cache libc6-compat
+WORKDIR /app
+
+# Instalação do pnpm e turbo
+RUN npm install -g pnpm turbo
+
+# Copy workspace configuration
+COPY package.json pnpm-workspace.yaml turbo.json ./
+COPY apps/lms/package.json ./apps/lms/
+COPY packages/database/package.json ./packages/database/
+COPY packages/auth/package.json ./packages/auth/
+COPY packages/types/package.json ./packages/types/
+COPY packages/ui/package.json ./packages/ui/
+COPY packages/config/package.json ./packages/config/
+
+RUN pnpm install
+
+FROM base AS builder
+WORKDIR /app
+RUN npm install -g pnpm turbo
+COPY --from=deps /app/node_modules ./node_modules
+COPY . .
+
+# Environment variables for build
+ENV NEXT_TELEMETRY_DISABLED 1
+
+RUN turbo run build --filter=lms
+
+FROM base AS runner
+WORKDIR /app
+
+ENV NODE_ENV production
+ENV NEXT_TELEMETRY_DISABLED 1
+
+RUN addgroup --system --gid 1001 nodejs
+RUN adduser --system --uid 1001 nextjs
+
+# Copy standalone output
+COPY --from=builder /app/apps/lms/public ./apps/lms/public
+COPY --from=builder --chown=nextjs:nodejs /app/apps/lms/.next/standalone ./
+COPY --from=builder --chown=nextjs:nodejs /app/apps/lms/.next/static ./apps/lms/.next/static
+
+USER nextjs
+
+EXPOSE 3000
+
+ENV PORT 3000
+
+CMD ["node", "apps/lms/server.js"]

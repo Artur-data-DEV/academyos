@@ -1,0 +1,42 @@
+{
+  "name": "lms",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev --port 3000",
+    "build": "next build",
+    "start": "next start --port 3000",
+    "lint": "eslint . --max-warnings=0",
+    "typecheck": "tsc --noEmit",
+    "import:detran": "node scripts/import-detran-track.mjs"
+  },
+  "dependencies": {
+    "@academyos/auth": "workspace:*",
+    "@academyos/database": "workspace:*",
+    "@academyos/types": "workspace:*",
+    "@academyos/ui": "workspace:*",
+    "@tailwindcss/typography": "^0.5.19",
+    "@tiptap/pm": "^3.27.1",
+    "@tiptap/react": "^3.27.1",
+    "@tiptap/starter-kit": "^3.27.1",
+    "lucide-react": "^1.20.0",
+    "next": "16.2.9",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.0",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@academyos/config": "workspace:*",
+    "@tailwindcss/postcss": "^4.1.18",
+    "@types/node": "^20.19.25",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "eslint": "^9.39.2",
+    "eslint-config-next": "16.2.9",
+    "tailwindcss": "^4.1.18",
+    "typescript": "^5.9.3"
+  }
+}
