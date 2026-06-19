@@ -39,3 +39,14 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# turborepo
+.turbo/
+
+# dataset dumps and scratch files
+packages/dataset-tools/data/
+packages/dataset-tools/scratch/
+*.vcex
+*.tqb
+packages/dataset-tools/**/*.json
+!packages/dataset-tools/package.json
