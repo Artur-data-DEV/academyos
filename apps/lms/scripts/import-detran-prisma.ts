@@ -36,6 +36,10 @@ async function main() {
     create: trackData,
   });
 
+  await prisma.module.deleteMany({
+    where: { trackId: track.id }
+  });
+
   for (const module of modules) {
     const moduleRow = await prisma.module.create({
       data: {

@@ -44,8 +44,28 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
-.lesson-markdown {
+.lesson-markdown, .markdown-content {
   @apply prose prose-zinc max-w-none;
+}
+
+/* Força brutalmente as cores do Design System Nexa em cima do plugin Typography */
+.lesson-markdown, .markdown-content {
+  color: var(--muted-foreground) !important;
+}
+
+.lesson-markdown :where(h1, h2, h3, h4, h5, h6, th, strong, code),
+.markdown-content :where(h1, h2, h3, h4, h5, h6, th, strong, code) {
+  color: var(--foreground) !important;
+}
+
+.lesson-markdown :where(p, li, ul, ol, blockquote),
+.markdown-content :where(p, li, ul, ol, blockquote) {
+  color: var(--muted-foreground) !important;
+}
+
+.lesson-markdown :where(a),
+.markdown-content :where(a) {
+  color: var(--primary) !important;
 }
 
 .lesson-markdown pre {
@@ -59,3 +79,5 @@
 .lesson-markdown pre code {
   @apply bg-transparent p-0 text-inherit;
 }
+
+/* Force CSS rebuild to load @academyos/ui/styles/globals.css updates */

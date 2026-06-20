@@ -125,14 +125,14 @@ export function MarkdownText({ content, className }: MarkdownTextProps) {
       className={cn(
         "markdown-content prose max-w-none dark:prose-invert",
         "prose-p:leading-relaxed prose-p:mb-4 last:prose-p:mb-0",
-        "prose-a:text-primary hover:prose-a:underline",
+        "prose-a:underline hover:prose-a:no-underline",
         "prose-ul:list-disc prose-ul:pl-5 prose-ul:mb-4",
         "prose-ol:list-decimal prose-ol:pl-5 prose-ol:mb-4",
         "prose-li:mb-1",
         "prose-strong:font-semibold",
-        "prose-code:bg-muted prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none",
-        "prose-pre:bg-muted prose-pre:border prose-pre:border-border",
-        "prose-blockquote:border-l-4 prose-blockquote:border-primary prose-blockquote:pl-4 prose-blockquote:italic prose-blockquote:text-muted-foreground",
+        "prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none",
+        "prose-pre:border",
+        "prose-blockquote:border-l-4 prose-blockquote:pl-4 prose-blockquote:italic",
         className,
       )}
     >
