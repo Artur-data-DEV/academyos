@@ -4,12 +4,13 @@ import { ArrowLeft, CheckCircle2, ExternalLink, ChevronDown } from "lucide-react
 
 import { Button } from "@academyos/ui/button";
 import { markLessonCompleteAction } from "@/app/actions/progress";
+import { redirect } from "next/navigation";
 import {
-  getDetranLesson,
-  getDetranTrack,
+  getServiceNowTrack,
+  getServiceNowLesson,
   getLessonNeighbors,
   getLessonRouteMap,
-} from "@/lib/detran-content";
+} from "@/lib/servicenow-content";
 
 type Props = {
   params: Promise<{
@@ -23,11 +24,14 @@ type Props = {
 
 export default async function LessonPage({ params }: Props) {
   const { trackSlug, moduleSlug, lessonSlug } = await params;
-  const track = await getDetranTrack();
-  const lesson = await getDetranLesson(moduleSlug, lessonSlug);
+  const track = await getServiceNowTrack();
+  const lesson = await getServiceNowLesson(moduleSlug, lessonSlug);
   const neighbors = await getLessonNeighbors(moduleSlug, lessonSlug);
 
   if (trackSlug !== track.slug || !lesson) {
+    if (trackSlug === "detran-marketplace" && lesson) {
+      redirect(`/tracks/${track.slug}/${moduleSlug}/${lessonSlug}`);
+    }
     return <main className="p-8 text-foreground">Aula não encontrada.</main>;
   }
 

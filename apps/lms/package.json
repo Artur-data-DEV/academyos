@@ -5,11 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "next dev -p 3000",
-    "build": "next build",
+    "build": "next build --webpack",
     "start": "next start --port 3000",
     "lint": "eslint . --max-warnings=0",
     "typecheck": "tsc --noEmit",
-    "import:detran": "node scripts/import-detran-track.mjs"
+    "import:servicenow": "node scripts/import-servicenow-track.mjs"
   },
   "dependencies": {
     "@academyos/auth": "workspace:*",

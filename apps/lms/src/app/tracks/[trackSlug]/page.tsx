@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { ArrowRight, BookOpen, Layers3 } from "lucide-react";
 
-import { getDetranTrack } from "@/lib/detran-content";
+import { redirect } from "next/navigation";
+import { getServiceNowTrack } from "@/lib/servicenow-content";
 import { Card, CardContent, CardHeader, CardTitle } from "@academyos/ui/card";
 import { Badge } from "@academyos/ui/badge";
 
@@ -11,9 +12,12 @@ type Props = {
 
 export default async function TrackPage({ params }: Props) {
   const { trackSlug } = await params;
-  const track = await getDetranTrack();
+  const track = await getServiceNowTrack();
 
   if (trackSlug !== track.slug) {
+    if (trackSlug === "detran-marketplace") {
+      redirect(`/tracks/${track.slug}`);
+    }
     return <main className="p-8 text-foreground">Trilha não encontrada.</main>;
   }
 

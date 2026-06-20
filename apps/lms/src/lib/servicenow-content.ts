@@ -20,24 +20,23 @@ export type TrackModule = {
   lessons: LessonSummary[];
 };
 
-export type DetranTrack = {
+export type ServiceNowTrack = {
   slug: string;
   title: string;
   description: string | null;
   modules: TrackModule[];
 };
 
-export type DetranLesson = LessonSummary & {
+export type ServiceNowLesson = LessonSummary & {
   moduleSlug: string;
   moduleTitle: string;
   content: string;
   sourcePath: string | null;
 };
 
-export const getDetranTrack = cache(async (): Promise<DetranTrack> => {
-  const track = await prisma.track.findFirst({
-    // Fallback if 'detran-marketplace' isn't there, just pick the first track
-    orderBy: { createdAt: "asc" },
+export const getServiceNowTrack = cache(async (): Promise<ServiceNowTrack> => {
+  const track = await prisma.track.findUnique({
+    where: { slug: "servicenow-vehicle-marketplace" },
     include: {
       modules: {
         orderBy: { order: "asc" },
@@ -52,7 +51,7 @@ export const getDetranTrack = cache(async (): Promise<DetranTrack> => {
 
   if (!track) {
     return {
-      slug: "detran-marketplace",
+      slug: "servicenow-vehicle-marketplace",
       title: "Trilha não encontrada no banco",
       description: "Por favor, rode o seed ou insira dados no Neon.",
       modules: [],
@@ -76,7 +75,7 @@ export const getDetranTrack = cache(async (): Promise<DetranTrack> => {
   };
 });
 
-export async function getDetranLesson(moduleSlug: string, lessonSlug: string) {
+export async function getServiceNowLesson(moduleSlug: string, lessonSlug: string) {
   const lesson = await prisma.lesson.findUnique({
     where: { slug: lessonSlug },
     include: { module: true },
@@ -105,11 +104,11 @@ export async function getDetranLesson(moduleSlug: string, lessonSlug: string) {
     moduleTitle: lesson.module.title,
     content: contentText,
     sourcePath,
-  } satisfies DetranLesson;
+  } satisfies ServiceNowLesson;
 }
 
 export async function getLessonNeighbors(moduleSlug: string, lessonSlug: string) {
-  const track = await getDetranTrack();
+  const track = await getServiceNowTrack();
   const flat = track.modules.flatMap((module) =>
     module.lessons.map((lesson) => ({
       ...lesson,
@@ -141,4 +140,3 @@ export const getLessonRouteMap = cache(async (trackSlug: string) => {
   }
   return routeMap;
 });
-

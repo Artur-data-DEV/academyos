@@ -4,11 +4,9 @@ import path from "node:path";
 
 const root = path.resolve(
   process.cwd(),
-  "..",
-  "..",
   "content",
   "sources",
-  "detran-marketplace-docs",
+  "servicenow-marketplace-docs",
   "docs",
 );
 
@@ -24,8 +22,8 @@ const prisma = new PrismaClient();
 
 async function main() {
   const trackData = {
-    slug: "detran-marketplace",
-    title: "Vehicle Marketplace (Detran SP)",
+    slug: "servicenow-vehicle-marketplace",
+    title: "ServiceNow Vehicle Marketplace Capstone",
     description:
       "Trilha prática de ServiceNow com modelagem de domínio, governança, arquitetura, update sets e documentação técnica.",
   };
@@ -81,7 +79,7 @@ async function main() {
     }
   }
 
-  console.log("Imported Detran Marketplace track into Prisma.");
+  console.log("Imported ServiceNow Vehicle Marketplace track into Prisma.");
 }
 
 async function readLessons(relativeDir: string) {

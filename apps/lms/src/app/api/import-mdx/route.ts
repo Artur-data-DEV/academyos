@@ -2,12 +2,17 @@ import { NextResponse } from 'next/server';
 import { unified } from 'unified';
 import remarkParse from 'remark-parse';
 import remarkGfm from 'remark-gfm';
-import { requireRole } from '@academyos/auth/src/requireRole';
+import { auth } from '@academyos/auth';
+
+export const dynamic = 'force-dynamic';
 
 export async function POST(req: Request) {
   try {
     // Validação de acesso
-    await requireRole(['ADMIN', 'INSTRUCTOR']);
+    const session = await auth();
+    if (!session?.user || !['ADMIN', 'INSTRUCTOR'].includes(session.user.role)) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
 
     const { markdown } = await req.json();
 

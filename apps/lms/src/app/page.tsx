@@ -4,10 +4,10 @@ import { ArrowRight, BookOpen, Layers3, Route, TimerReset } from "lucide-react";
 import { Button } from "@academyos/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@academyos/ui/card";
 import { Badge } from "@academyos/ui/badge";
-import { getDetranTrack } from "@/lib/detran-content";
+import { getServiceNowTrack } from "@/lib/servicenow-content";
 
 export default async function Home() {
-  const track = await getDetranTrack();
+  const track = await getServiceNowTrack();
   const lessonCount = track.modules.reduce(
     (total, module) => total + module.lessons.length,
     0,
