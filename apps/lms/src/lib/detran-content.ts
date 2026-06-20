@@ -31,6 +31,7 @@ export type DetranLesson = LessonSummary & {
   moduleSlug: string;
   moduleTitle: string;
   content: string;
+  sourcePath: string | null;
 };
 
 export const getDetranTrack = cache(async (): Promise<DetranTrack> => {
@@ -86,11 +87,14 @@ export async function getDetranLesson(moduleSlug: string, lessonSlug: string) {
   }
 
   let contentText = "";
+  let sourcePath = null;
+  
   if (typeof lesson.content === "string") {
     contentText = lesson.content;
   } else if (lesson.content && typeof lesson.content === "object") {
-    // Caso seja armazenado como JSON struct {"markdown": "..."}
-    contentText = (lesson.content as any).body || (lesson.content as any).markdown || JSON.stringify(lesson.content);
+    const jsonContent = lesson.content as any;
+    contentText = jsonContent.body || jsonContent.markdown || JSON.stringify(lesson.content);
+    sourcePath = jsonContent.sourcePath || null;
   }
 
   return {
@@ -100,6 +104,7 @@ export async function getDetranLesson(moduleSlug: string, lessonSlug: string) {
     moduleSlug: lesson.module.id,
     moduleTitle: lesson.module.title,
     content: contentText,
+    sourcePath,
   } satisfies DetranLesson;
 }
 
@@ -120,4 +125,20 @@ export async function getLessonNeighbors(moduleSlug: string, lessonSlug: string)
     next: index >= 0 && index < flat.length - 1 ? flat[index + 1] : null,
   };
 }
+
+export const getLessonRouteMap = cache(async (trackSlug: string) => {
+  const lessons = await prisma.lesson.findMany({
+    where: { module: { track: { slug: trackSlug } } },
+    select: { slug: true, moduleId: true, content: true },
+  });
+
+  const routeMap: Record<string, string> = {};
+  for (const l of lessons) {
+    const sourcePath = (l.content as any)?.sourcePath;
+    if (sourcePath) {
+      routeMap[sourcePath] = `/tracks/${trackSlug}/${l.moduleId}/${l.slug}`;
+    }
+  }
+  return routeMap;
+});
 
