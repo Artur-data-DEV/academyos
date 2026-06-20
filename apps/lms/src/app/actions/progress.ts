@@ -1,9 +1,14 @@
-// @ts-nocheck
 "use server";
 
 import { revalidatePath } from "next/cache";
+import { PrismaClient } from "@academyos/database";
+import { auth } from "@academyos/auth";
 
-import { createClient } from "@/lib/supabase/server";
+const globalForPrisma = globalThis as unknown as {
+  prisma: PrismaClient | undefined;
+};
+const prisma = globalForPrisma.prisma ?? new PrismaClient();
+if (process.env.NODE_ENV !== "production") globalForPrisma.prisma = prisma;
 
 export async function markLessonCompleteAction(formData: FormData) {
   const lessonSlug = String(formData.get("lessonSlug") ?? "");
@@ -13,36 +18,42 @@ export async function markLessonCompleteAction(formData: FormData) {
     return;
   }
 
-  const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  const session = await auth();
+  const user = session?.user;
 
-  if (!user) {
+  if (!user?.id) {
     revalidatePath(path);
     return;
   }
 
-  const { data: lesson } = await supabase
-    .from("lms_lessons")
-    .select("id")
-    .eq("slug", lessonSlug)
-    .maybeSingle();
+  const lesson = await prisma.lesson.findUnique({
+    where: { slug: lessonSlug },
+    select: { id: true },
+  });
 
   if (!lesson?.id) {
     revalidatePath(path);
     return;
   }
 
-  await supabase.from("lms_progress").upsert(
-    {
-      user_id: user.id,
-      lesson_id: lesson.id,
-      status: "completed",
-      completed_at: new Date().toISOString(),
+  await prisma.progress.upsert({
+    where: {
+      userId_lessonId: {
+        userId: user.id,
+        lessonId: lesson.id,
+      },
     },
-    { onConflict: "user_id,lesson_id" },
-  );
+    update: {
+      status: "COMPLETED",
+      completedAt: new Date(),
+    },
+    create: {
+      userId: user.id,
+      lessonId: lesson.id,
+      status: "COMPLETED",
+      completedAt: new Date(),
+    },
+  });
 
   revalidatePath(path);
 }

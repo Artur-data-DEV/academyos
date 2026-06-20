@@ -1,12 +1,16 @@
-import { promises as fs } from "node:fs";
-import path from "node:path";
 import { cache } from "react";
+import { PrismaClient } from "@academyos/database";
+
+const globalForPrisma = globalThis as unknown as {
+  prisma: PrismaClient | undefined;
+};
+export const prisma = globalForPrisma.prisma ?? new PrismaClient();
+if (process.env.NODE_ENV !== "production") globalForPrisma.prisma = prisma;
 
 export type LessonSummary = {
   slug: string;
   title: string;
   order: number;
-  sourcePath: string;
 };
 
 export type TrackModule = {
@@ -17,9 +21,9 @@ export type TrackModule = {
 };
 
 export type DetranTrack = {
-  slug: "detran-marketplace";
+  slug: string;
   title: string;
-  description: string;
+  description: string | null;
   modules: TrackModule[];
 };
 
@@ -29,59 +33,73 @@ export type DetranLesson = LessonSummary & {
   content: string;
 };
 
-const ROOT = path.join(
-  process.cwd(),
-  "..",
-  "..",
-  "content",
-  "sources",
-  "detran-marketplace-docs",
-  "docs",
-);
-
-const MODULES = [
-  { slug: "architecture", title: "Arquitetura", order: 10, dir: "architecture" },
-  { slug: "adr", title: "Decisões de Arquitetura", order: 20, dir: "architecture/adr" },
-  { slug: "implementation", title: "Implementação", order: 30, dir: "implementation" },
-  { slug: "governance", title: "Governança", order: 40, dir: "governance" },
-  { slug: "reference", title: "Referência", order: 50, dir: "reference" },
-];
-
 export const getDetranTrack = cache(async (): Promise<DetranTrack> => {
-  const modules = await Promise.all(
-    MODULES.map(async (module) => ({
-      slug: module.slug,
-      title: module.title,
-      order: module.order,
-      lessons: await readLessons(module.dir),
-    })),
-  );
+  const track = await prisma.track.findFirst({
+    // Fallback if 'detran-marketplace' isn't there, just pick the first track
+    orderBy: { createdAt: "asc" },
+    include: {
+      modules: {
+        orderBy: { order: "asc" },
+        include: {
+          lessons: {
+            orderBy: { order: "asc" },
+          },
+        },
+      },
+    },
+  });
+
+  if (!track) {
+    return {
+      slug: "detran-marketplace",
+      title: "Trilha não encontrada no banco",
+      description: "Por favor, rode o seed ou insira dados no Neon.",
+      modules: [],
+    };
+  }
 
   return {
-    slug: "detran-marketplace",
-    title: "Vehicle Marketplace (Detran SP)",
-    description:
-      "Trilha prática de ServiceNow com modelagem de domínio, governança, arquitetura, update sets e documentação técnica do marketplace de veículos.",
-    modules: modules.filter((module) => module.lessons.length > 0),
+    slug: track.slug,
+    title: track.title,
+    description: track.description,
+    modules: track.modules.map((m) => ({
+      slug: m.id, // Usando ID pois não há module.slug no Prisma
+      title: m.title,
+      order: m.order,
+      lessons: m.lessons.map((l) => ({
+        slug: l.slug,
+        title: l.title,
+        order: l.order,
+      })),
+    })),
   };
 });
 
 export async function getDetranLesson(moduleSlug: string, lessonSlug: string) {
-  const track = await getDetranTrack();
-  const module = track.modules.find((item) => item.slug === moduleSlug);
-  const lesson = module?.lessons.find((item) => item.slug === lessonSlug);
+  const lesson = await prisma.lesson.findUnique({
+    where: { slug: lessonSlug },
+    include: { module: true },
+  });
 
-  if (!module || !lesson) {
+  if (!lesson || lesson.module.id !== moduleSlug) {
     return null;
   }
 
-  const content = await fs.readFile(lesson.sourcePath, "utf8");
+  let contentText = "";
+  if (typeof lesson.content === "string") {
+    contentText = lesson.content;
+  } else if (lesson.content && typeof lesson.content === "object") {
+    // Caso seja armazenado como JSON struct {"markdown": "..."}
+    contentText = (lesson.content as any).body || (lesson.content as any).markdown || JSON.stringify(lesson.content);
+  }
 
   return {
-    ...lesson,
-    moduleSlug: module.slug,
-    moduleTitle: module.title,
-    content,
+    slug: lesson.slug,
+    title: lesson.title,
+    order: lesson.order,
+    moduleSlug: lesson.module.id,
+    moduleTitle: lesson.module.title,
+    content: contentText,
   } satisfies DetranLesson;
 }
 
@@ -103,63 +121,3 @@ export async function getLessonNeighbors(moduleSlug: string, lessonSlug: string)
   };
 }
 
-async function readLessons(relativeDir: string): Promise<LessonSummary[]> {
-  const dir = path.join(ROOT, relativeDir);
-  const entries = await fs.readdir(dir, { withFileTypes: true }).catch(() => []);
-
-  const lessons = await Promise.all(
-    entries
-      .filter((entry) => entry.isFile() && entry.name.endsWith(".md"))
-      .map(async (entry, index) => {
-        const sourcePath = path.join(dir, entry.name);
-        const content = await fs.readFile(sourcePath, "utf8");
-        const slug = entry.name.replace(/\.md$/, "");
-
-        return {
-          slug,
-          title: extractTitle(content, slug),
-          order: extractOrder(entry.name, index),
-          sourcePath,
-        };
-      }),
-  );
-
-  return lessons.sort((a, b) => a.order - b.order || a.title.localeCompare(b.title));
-}
-
-function extractTitle(markdown: string, fallback: string) {
-  const heading = markdown.match(/^#\s+(.+)$/m)?.[1]?.trim();
-
-  if (heading) {
-    return heading.replace(/\s+—\s+/g, " - ");
-  }
-
-  return fallback
-    .split("-")
-    .filter(Boolean)
-    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
-    .join(" ");
-}
-
-function extractOrder(filename: string, index: number) {
-  const explicit = filename.match(/(?:ADR-|US-)(\d+)/)?.[1];
-
-  if (explicit) {
-    return Number(explicit);
-  }
-
-  const preferredOrder = [
-    "overview",
-    "domain-model",
-    "data-model",
-    "security-model",
-    "integration-architecture",
-    "approval-architecture",
-    "csdm-mapping",
-    "cmdb-mapping",
-  ];
-  const normalized = filename.replace(/\.md$/, "");
-  const preferred = preferredOrder.indexOf(normalized);
-
-  return preferred >= 0 ? preferred : 1000 + index;
-}

@@ -13,7 +13,7 @@
     "import:detran": "pnpm --filter lms import:detran"
   },
   "devDependencies": {
-
+    "tsx": "^4.22.4",
     "turbo": "^2.6.3",
     "typescript": "^5.9.3"
   }

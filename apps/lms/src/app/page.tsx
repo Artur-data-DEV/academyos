@@ -39,7 +39,7 @@ export default async function Home() {
       <section className="mx-auto grid w-full max-w-7xl gap-4 px-6 py-6 md:grid-cols-3">
         <Metric icon={Layers3} label="Módulos" value={track.modules.length} />
         <Metric icon={BookOpen} label="Aulas" value={lessonCount} />
-        <Metric icon={TimerReset} label="Fonte" value="Markdown importável" />
+        <Metric icon={TimerReset} label="Fonte" value="Banco Neon (Prisma)" />
       </section>
 
       <section className="mx-auto grid w-full max-w-7xl gap-4 px-6 pb-10 lg:grid-cols-[280px_1fr]">

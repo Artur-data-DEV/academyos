@@ -1,22 +1,66 @@
 import { create } from 'zustand';
 
+export type Option = {
+  id: string;
+  text: string;
+};
+
+export type SimulatorQuestion = {
+  id: string;
+  legacyId?: string | null;
+  topic: string;
+  questionType: string;
+  content: string;
+  options: Option[];
+  correctAnswers: string[];
+  explanation?: string | null;
+};
+
 export type SimulatorState = {
-  currentQuestionId: string | null;
-  progress: number;
-  score: number;
-  startSimulation: () => void;
-  answerQuestion: (questionId: string, isCorrect: boolean) => void;
+  questions: SimulatorQuestion[];
+  currentQuestionIndex: number;
+  answers: Record<string, string[]>; // questionId -> selectedOptionIds
+  isCompleted: boolean;
+  
+  // Actions
+  initSimulation: (questions: SimulatorQuestion[]) => void;
+  answerQuestion: (questionId: string, selectedOptions: string[]) => void;
+  nextQuestion: () => void;
+  previousQuestion: () => void;
+  finishSimulation: () => void;
   resetSimulation: () => void;
 };
 
 export const useSimulatorStore = create<SimulatorState>((set) => ({
-  currentQuestionId: null,
-  progress: 0,
-  score: 0,
-  startSimulation: () => set({ progress: 0, score: 0, currentQuestionId: 'start' }),
-  answerQuestion: (qId, isCorrect) => set((state) => ({
-    progress: Math.min(state.progress + 10, 100),
-    score: isCorrect ? state.score + 10 : state.score,
+  questions: [],
+  currentQuestionIndex: 0,
+  answers: {},
+  isCompleted: false,
+
+  initSimulation: (questions) => set({ 
+    questions, 
+    currentQuestionIndex: 0, 
+    answers: {}, 
+    isCompleted: false 
+  }),
+
+  answerQuestion: (questionId, selectedOptions) => set((state) => ({
+    answers: { ...state.answers, [questionId]: selectedOptions }
   })),
-  resetSimulation: () => set({ progress: 0, score: 0, currentQuestionId: null })
+
+  nextQuestion: () => set((state) => ({
+    currentQuestionIndex: Math.min(state.currentQuestionIndex + 1, state.questions.length - 1)
+  })),
+
+  previousQuestion: () => set((state) => ({
+    currentQuestionIndex: Math.max(state.currentQuestionIndex - 1, 0)
+  })),
+
+  finishSimulation: () => set({ isCompleted: true }),
+
+  resetSimulation: () => set({ 
+    currentQuestionIndex: 0, 
+    answers: {}, 
+    isCompleted: false 
+  })
 }));
