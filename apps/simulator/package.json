@@ -20,6 +20,7 @@
   "dependencies": {
     "@academyos/database": "workspace:*",
     "@academyos/store": "workspace:*",
+    "@academyos/types": "workspace:*",
     "@academyos/ui": "workspace:*",
     "@ai-sdk/openai": "^3.0.73",
     "@ai-sdk/react": "^3.0.210",

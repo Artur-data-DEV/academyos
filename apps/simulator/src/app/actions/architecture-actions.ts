@@ -2,6 +2,7 @@
 
 import { prisma } from "@/lib/server/prisma";
 import { createClient } from "@/lib/supabase/server";
+import { assertArchitectureOptions } from "@academyos/types";
 
 export async function submitArchitectureDecision({
   questionId,
@@ -28,8 +29,8 @@ export async function submitArchitectureDecision({
     throw new Error("Cenário inválido");
   }
 
-  const options = question.options as any;
-  const layers = options.layers as any[];
+  const options = assertArchitectureOptions(question.options);
+  const layers = options.layers;
   const thresholds = options.thresholds || { maxCost: 100, minPerf: 80 };
 
   let totalCost = 0;
