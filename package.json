@@ -10,7 +10,8 @@
     "build": "turbo run build",
     "lint": "turbo run lint",
     "typecheck": "turbo run typecheck",
-    "import:servicenow": "pnpm --filter lms import:servicenow"
+    "import:servicenow": "pnpm --filter @academyos/dataset-tools import:servicenow",
+    "import:servicenow:prisma": "pnpm --filter @academyos/dataset-tools import:servicenow:prisma"
   },
   "devDependencies": {
     "tsx": "^4.22.4",

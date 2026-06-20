@@ -1,11 +1,5 @@
 import { cache } from "react";
-import { PrismaClient } from "@academyos/database";
-
-const globalForPrisma = globalThis as unknown as {
-  prisma: PrismaClient | undefined;
-};
-export const prisma = globalForPrisma.prisma ?? new PrismaClient();
-if (process.env.NODE_ENV !== "production") globalForPrisma.prisma = prisma;
+import { prisma } from "@academyos/database";
 
 export type LessonSummary = {
   slug: string;

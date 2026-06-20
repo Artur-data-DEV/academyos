@@ -3,7 +3,7 @@ import path from "node:path";
 
 const nextConfig: NextConfig = {
   outputFileTracingRoot: path.join(__dirname, "../.."),
-  transpilePackages: ["@academyos/ui", "@academyos/auth", "@academyos/database", "@academyos/store"],
+  transpilePackages: ["@academyos/ui"],
   serverExternalPackages: ["mermaid"],
 };
 

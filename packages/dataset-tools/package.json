@@ -13,7 +13,9 @@
     "import:questions:dump": "node scripts/import-questions.mjs --source CSA_EXAMTOPICS_FROM_DUMP.json",
     "audit:questions": "node scripts/audit-questions.mjs",
     "build:dump": "python scripts/build_dataset_from_dump.py --dump-dir \"data/raw-examtopics/01 - ExamTopics/01 - Respostas\" --existing-json \"CSA_EXAMTOPICS.json\" --output \"CSA_EXAMTOPICS_FROM_DUMP.json\" --cache-dir \"data/ocr-cache\" --scale 1.4",
-    "migrate:supabase": "tsx scripts/migrate-from-supabase.ts"
+    "migrate:supabase": "tsx scripts/migrate-from-supabase.ts",
+    "import:servicenow": "node scripts/import-servicenow-track.mjs",
+    "import:servicenow:prisma": "tsx scripts/import-servicenow-prisma.ts"
   },
   "dependencies": {
     "@academyos/database": "workspace:*",

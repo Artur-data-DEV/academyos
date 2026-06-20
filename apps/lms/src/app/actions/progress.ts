@@ -1,14 +1,8 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import { PrismaClient } from "@academyos/database";
+import { prisma } from "@academyos/database";
 import { auth } from "@academyos/auth";
-
-const globalForPrisma = globalThis as unknown as {
-  prisma: PrismaClient | undefined;
-};
-const prisma = globalForPrisma.prisma ?? new PrismaClient();
-if (process.env.NODE_ENV !== "production") globalForPrisma.prisma = prisma;
 
 export async function markLessonCompleteAction(formData: FormData) {
   const lessonSlug = String(formData.get("lessonSlug") ?? "");

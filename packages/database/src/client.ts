@@ -12,13 +12,14 @@ const connectionString = process.env.DATABASE_URL;
 
 // Singleton helper para desenvolvimento com Next.js HMR
 const prismaClientSingleton = () => {
-  if (connectionString) {
+  if (connectionString && process.env.NEXT_RUNTIME === 'edge') {
     const pool = new Pool({ connectionString });
     const adapter = new PrismaNeon(pool);
     return new PrismaClient({ adapter });
   }
   
   // Fallback seguro caso não tenha connection string na geração de build (ex: Vercel)
+  // ou quando rodando no Node.js runtime padrão (onde conexões TCP diretas funcionam perfeitamente).
   return new PrismaClient();
 };
 
