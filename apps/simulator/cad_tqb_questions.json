@@ -1,0 +1,302 @@
+[
+  {
+    "id": "32e2dff8-41bc-440e-8555-419fc45568c9",
+    "question": "How does ServiceNow match inbound email to existing records?",
+    "type": "SINGLE",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Watermark",
+        "isCorrect": true
+      },
+      {
+        "letter": "B",
+        "text": "Record link",
+        "isCorrect": false
+      },
+      {
+        "letter": "C",
+        "text": "Subject line with record number",
+        "isCorrect": false
+      },
+      {
+        "letter": "D",
+        "text": "sys_id",
+        "isCorrect": false
+      }
+    ],
+    "answer": "A",
+    "explanation": "SINGLE",
+    "number": 1
+  },
+  {
+    "id": "e124b279-9cbb-41ed-8c07-beac48ed60c7",
+    "question": "What is a function of an update set in ServiceNow Studio?",
+    "type": "SINGLE",
+    "options": [
+      {
+        "letter": "A",
+        "text": "To track and monitor system performance metrics",
+        "isCorrect": false
+      },
+      {
+        "letter": "B",
+        "text": "To create new custom applications",
+        "isCorrect": false
+      },
+      {
+        "letter": "C",
+        "text": "To manage configurations directly in a production environment",
+        "isCorrect": false
+      },
+      {
+        "letter": "D",
+        "text": "To group configuration changes for transfer between instances",
+        "isCorrect": true
+      }
+    ],
+    "answer": "D",
+    "explanation": "SINGLE",
+    "number": 2
+  },
+  {
+    "id": "b569aaac-b42d-4506-8e6e-b0a346e73509",
+    "question": "Which table in ServiceNow stores the details of customizations included in an update set?",
+    "type": "SINGLE",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Customer Update [sys_update_xml]",
+        "isCorrect": true
+      },
+      {
+        "letter": "B",
+        "text": "System Properties [sys_properties]",
+        "isCorrect": false
+      },
+      {
+        "letter": "C",
+        "text": "Application Registry [sys_app]",
+        "isCorrect": false
+      },
+      {
+        "letter": "D",
+        "text": "Update Set [sys_update_set]",
+        "isCorrect": false
+      }
+    ],
+    "answer": "A",
+    "explanation": "SINGLE",
+    "number": 3
+  },
+  {
+    "id": "cb46d9e0-0348-438f-b623-bb90786b12f4",
+    "question": "How can Administrators expand the list of supported file types for code search in ServiceNow Studio?",
+    "type": "SINGLE",
+    "options": [
+      {
+        "letter": "A",
+        "text": "By modifying the default code search table",
+        "isCorrect": false
+      },
+      {
+        "letter": "B",
+        "text": "By configuring metadata synchronization settings",
+        "isCorrect": false
+      },
+      {
+        "letter": "C",
+        "text": "By creating a new code search group",
+        "isCorrect": false
+      },
+      {
+        "letter": "D",
+        "text": "By adding new file types to a custom search group",
+        "isCorrect": true
+      }
+    ],
+    "answer": "D",
+    "explanation": "SINGLE",
+    "number": 4
+  },
+  {
+    "id": "c47f5b55-d7f4-4702-b58e-843ac76311f2",
+    "question": "What is displayed to delegated developers to package changes for deployment in ServiceNow Studio?",
+    "type": "SINGLE",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Tools tab",
+        "isCorrect": false
+      },
+      {
+        "letter": "B",
+        "text": "Export to XML",
+        "isCorrect": false
+      },
+      {
+        "letter": "C",
+        "text": "Publish Button",
+        "isCorrect": false
+      },
+      {
+        "letter": "D",
+        "text": "Update Set Picker",
+        "isCorrect": true
+      }
+    ],
+    "answer": "D",
+    "explanation": "SINGLE",
+    "number": 5
+  },
+  {
+    "id": "2d44ce9f-f9e6-452f-be23-b91b723efac4",
+    "question": "What happens if a record producer script aborts the record generation process in ServiceNow?",
+    "type": "SINGLE",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Record creation displays an error message to the user",
+        "isCorrect": true
+      },
+      {
+        "letter": "B",
+        "text": "Record is not generated in the Item Produced Record table",
+        "isCorrect": false
+      },
+      {
+        "letter": "C",
+        "text": "Record creation is redirected to a confirmation page",
+        "isCorrect": false
+      },
+      {
+        "letter": "D",
+        "text": "Record creation terminates without notifying the user",
+        "isCorrect": false
+      }
+    ],
+    "answer": "A",
+    "explanation": "SINGLE",
+    "number": 6
+  },
+  {
+    "id": "abdc2fac-ac3a-4bea-bd37-a93325682132",
+    "question": "Which is an example of when an application might use a Scheduled Script Execution (Scheduled Job)?",
+    "type": "SINGLE",
+    "options": [
+      {
+        "letter": "A",
+        "text": "The application needs to run a client-side script at the same time every day.",
+        "isCorrect": false
+      },
+      {
+        "letter": "B",
+        "text": "The application needs to query the database every day to look for unassigned records.",
+        "isCorrect": true
+      },
+      {
+        "letter": "C",
+        "text": "To display a custom welcome message when a user logs in.",
+        "isCorrect": false
+      },
+      {
+        "letter": "D",
+        "text": "To validate form input fields before a record is submitted.",
+        "isCorrect": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "SINGLE",
+    "number": 7
+  },
+  {
+    "id": "18654f86-d06b-4278-8117-7beeb95292de",
+    "question": "Which options are strategies for debugging client-side scripts? (Choose two.)",
+    "type": "MULTI",
+    "options": [
+      {
+        "letter": "A",
+        "text": "g_form.addInfoMessage()",
+        "isCorrect": true
+      },
+      {
+        "letter": "B",
+        "text": "gs.addErrorMessage()",
+        "isCorrect": false
+      },
+      {
+        "letter": "C",
+        "text": "gs.log()",
+        "isCorrect": false
+      },
+      {
+        "letter": "D",
+        "text": "jslog()",
+        "isCorrect": true
+      }
+    ],
+    "answer": "A, D",
+    "explanation": "MULTI",
+    "number": 8
+  },
+  {
+    "id": "e7c9ab37-c47b-4646-90da-4e60d5241340",
+    "question": "Which of the following objects does a Before Business Rule have access to in a script?",
+    "type": "SINGLE",
+    "options": [
+      {
+        "letter": "A",
+        "text": "current",
+        "isCorrect": false
+      },
+      {
+        "letter": "B",
+        "text": "previous",
+        "isCorrect": false
+      },
+      {
+        "letter": "C",
+        "text": "GlideRecord",
+        "isCorrect": false
+      },
+      {
+        "letter": "D",
+        "text": "All of the above",
+        "isCorrect": true
+      }
+    ],
+    "answer": "D",
+    "explanation": "SINGLE",
+    "number": 9
+  },
+  {
+    "id": "efca1c87-6c9e-4357-b616-fc4e6e46b39b",
+    "question": "What happens to the List view when a new field is added to an existing table?",
+    "type": "SINGLE",
+    "options": [
+      {
+        "letter": "A",
+        "text": "The new field is added at the start of the List",
+        "isCorrect": false
+      },
+      {
+        "letter": "B",
+        "text": "The new field is added at the end of the List",
+        "isCorrect": false
+      },
+      {
+        "letter": "C",
+        "text": "The new field is not added to the List view",
+        "isCorrect": true
+      },
+      {
+        "letter": "D",
+        "text": "A List View is created with the new Field",
+        "isCorrect": false
+      }
+    ],
+    "answer": "C",
+    "explanation": "SINGLE",
+    "number": 10
+  }
+]

@@ -1,0 +1,3759 @@
+[
+  {
+    "number": 1,
+    "question": "Which of the following statements is true for the Form Designer?\n\na) To add a field to the form layout, drag the field from the Fields tab to the desired destination on the form.\nb) To create a new field on a form's table, drag the appropriate data type from the Field Types tab to the form and then configure the new field.\nc) To remove a field from the form layout, hover over the field to enable the Action buttons, and select the Delete (X) button.\nd) To add a section to the form layout, drag it from the Field Types tab to the desired destination on the form.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "a, b, c, and d",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "b, c, and d",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "a, b, and d",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "a, b, and c",
+        "correct": true
+      }
+    ],
+    "answer": "D",
+    "explanation": "https://docs.servicenow.com/bundle/tokyo-platform-administration/page/administer/form- administration/concept/c_FormDesign.html\n\nThe Form Designer is a graphical interface for creating and customizing forms. The following statements are true for the Form Designer:\n\nTo add a field to the form layout, drag the field from the Fields tab to the desired destination on the form. This will add the field to the form view without changing the table definition. To create a new field on a form's table, drag the appropriate data type from the Field Types tab to the form and then configure the new field. This will create a new column on the table and add the field to the form view.\nTo remove a field from the form layout, hover over the field to enable the Action buttons, and select the Delete (X) button. This will remove the field from the form view but not from the table definition. The following statement is false for the Form Designer:\nTo add a section to the form layout, drag it from the Field Types tab to the desired destination on the form. This is incorrect because sections are not available in the Field Types tab. To add a section, click the Add Section button on the toolbar or right-click on the form and select Add Section."
+  },
+  {
+    "number": 2,
+    "question": "Which of the following are configured in an Email Notification?\n\na) Who will receive the notification.\nb) What content will be in the notification.\nc) When to send the notification.\nd) How to send the notification.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "a, b and c",
+        "correct": true
+      },
+      {
+        "letter": "B",
+        "text": "a, b, and d",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "b, c and d",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "a, c and d",
+        "correct": false
+      }
+    ],
+    "answer": "A",
+    "explanation": "https://docs.servicenow.com/bundle/tokyo-servicenow-\nplatform/page/administer/notification/task/t_CreateANotification.html"
+  },
+  {
+    "number": 3,
+    "question": "To see what scripts, reports, and other application artifacts will be in a published application:",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Enter the name of the Application in the Global search field",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "Open the list of Update Sets for the instance",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "Examine the Application Files Related List in the application to be published",
+        "correct": true
+      },
+      {
+        "letter": "D",
+        "text": "Open the artifact records individually to verify the value in the Application field",
+        "correct": false
+      }
+    ],
+    "answer": "C",
+    "explanation": "To see what scripts, reports, and other application artifacts will be in a published application, the best option is to examine the Application Files Related List in the application to be published. This will show all the application files that belong to the application, grouped by file type and scope. You can also filter, sort, or search the list to find specific files. The following options are not the best ways to see what application artifacts will be in a published application:\nEnter the name of the Application in the Global search field. This will perform a global text search on the instance and return any records that match the application name, which may include irrelevant or incomplete results.\nOpen the list of Update Sets for the instance. This will show all the update sets that have been created or imported on the instance, but not necessarily the ones that belong to the application to be published. Update sets are used to move customizations between instances, not to publish applications to the ServiceNow Store or Share.\nOpen the artifact records individually to verify the value in the Application field. This will require opening each record that may be part of the application and checking the Application field, which is tedious and error-prone."
+  },
+  {
+    "number": 4,
+    "question": "Which one of the following is NOT a debugging strategy for client-side scripts?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "g_form.addInfoMessage()",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "Field Watcher",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "jslog()",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "gs.log()",
+        "correct": true
+      }
+    ],
+    "answer": "D",
+    "explanation": "https://developer.servicenow.com/dev.do#!/learn/learning- plans/rome/new_to_servicenow/app_store_learnv2_scripting_rome_debugging_client_scripts The following are debugging strategies for client-side scripts, which run in the web browser and manipulate the user interface:\n\ng_form.addInfoMessage(). This is a client-side API that displays an information message at the top of the form.\nField Watcher. This is a debugging tool that displays the current and previous values of one or more fields on a form.\njslog(). This is a client-side API that writes a message to the browser console. The following is not a debugging strategy for client-side scripts, but for server-side scripts, which run on the ServiceNow platform and manipulate the database:\ngs.log(). This is a server-side API that writes a message to the system log."
+  },
+  {
+    "number": 5,
+    "question": "Which Application Access configuration field(s) are NOT available if the Can read configuration field is NOT selected?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "All access to this table via web services",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "Can create, Can update, and Can delete",
+        "correct": true
+      },
+      {
+        "letter": "C",
+        "text": "Can read does not affect the availability of other Application Access fields",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "Allow configuration",
+        "correct": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "\"You must first select read access to grant any other API record operation.\" https://docs.servicenow.com/bundle/tokyo-application-\ndevelopment/page/build/applications/reference/r_TableApplicationAccessFields.html The Application Access configuration fields control the access level for an application and its tables. The following Application Access configuration fields are not available if the Can read configuration field is not selected:\nCan create. This field determines whether users can create records on the application tables. Can update. This field determines whether users can update records on the application tables. Can delete. This field determines whether users can delete records on the application tables. These fields are not available because they depend on the Can read field, which determines whether users can view records on the application tables. If users cannot read records, they cannot create, update, or delete them either.\nThe following Application Access configuration fields are available regardless of the Can read configuration field:\nAll access to this table via web services. This field determines whether users can access the application tables using web services, such as REST or SOAP. Allow configuration. This field determines whether users can configure the application tables, such as adding or modifying fields, views, or indexes."
+  },
+  {
+    "number": 11,
+    "question": "Which one of the following is NOT a UI Action type?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "List choice",
+        "correct": true
+      },
+      {
+        "letter": "B",
+        "text": "Form button",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "List banner button",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "Form choice",
+        "correct": false
+      }
+    ],
+    "answer": "A",
+    "explanation": "A UI Action is a button, link, or choice that can be clicked by a user to perform an action, such as submitting a form or running a script. The following are UI Action types:\nList choice. This is a UI Action that appears as a choice list on a list of records. It can be used to perform an action on multiple records at once, such as deleting or updating them. Form button. This is a UI Action that appears as a button on a form. It can be used to perform an action on the current record, such as saving or approving it. List banner button. This is a UI Action that appears as a button on the banner of a list of records. It can be used to perform an action on the entire list, such as exporting or printing it.\nThe following is not a UI Action type:\nForm choice. This is not a UI Action type, but a field type. A form choice is a field that displays a choice list on a form. It can be used to select a value from a predefined set of options, such as priority or state."
+  },
+  {
+    "number": 12,
+    "question": "Which of the following is NOT supported by Flow Designer?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Call a subflow from a flow",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "Test a flow with rollback",
+        "correct": true
+      },
+      {
+        "letter": "C",
+        "text": "Use Delegated Developer",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "Run a flow from a MetricBase Trigger",
+        "correct": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "Flow Designer is a graphical tool that allows users to automate processes in ServiceNow without coding. The following are supported by Flow Designer:\nCall a subflow from a flow. This is a feature that allows users to invoke a subflow, which is a reusable unit of logic, from a flow. This can help simplify complex flows and avoid duplication of logic. Use Delegated Developer. This is a feature that allows administrators to delegate the development and maintenance of flows and actions to users who are not administrators. This can help distribute the workload and empower non-admin users to create automations. Run a flow from a MetricBase Trigger. This is a feature that allows users to trigger a flow based on a MetricBase query, which is a way of analyzing time-series data in ServiceNow. This can help automate actions based on data trends and patterns.\nThe following is not supported by Flow Designer:\nTest a flow with rollback. This is not a feature of Flow Designer, but of Automated Test Framework (ATF), which is a tool that allows users to create and run automated tests on ServiceNow applications and features. ATF supports testing flows with rollback, which means reverting any changes made by the flow during the test execution."
+  },
+  {
+    "number": 13,
+    "question": "Which of the following are true for reports in ServiceNow? (Choose three.)",
+    "options": [
+      {
+        "letter": "A",
+        "text": "List of Records, Separator, Catalog Type, Roles",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "Assessment, List of Records, Separator, Timeline Page",
+        "correct": true
+      },
+      {
+        "letter": "C",
+        "text": "List of Records, Content Page, Order, URL (from arguments:)",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "Assessment, List of Records, Content Page, Roles",
+        "correct": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "https://docs.servicenow.com/bundle/rome-platform-administration/page/administer/reference- pages/task/schedule-report.html Generate and distribute scheduled reports via email. A report is a graphical representation of data from one or more tables in ServiceNow. The following are true for reports in ServiceNow:\nCan be a graphical representation of data. This is true because reports can use various chart types, such as pie, bar, line, or gauge, to visualize data in a meaningful way. Can be run on demand by authorized users. This is true because reports can be accessed from the Reports menu or the Report Navigator and run by users who have the appropriate roles and permissions to view the data.\nCan be scheduled to be run and distributed by email. This is true because reports can be configured to run at a specific time and frequency and send the results to one or more email recipients.\nThe following are not true for reports in ServiceNow:\nAny user can see any report shared with them. This is false because users can only see reports that are shared with them if they also have access to the data source of the report. For example, a user who does not have the itil role cannot see a report based on the incident table, even if the report is shared with them.\nAll users can generate reports on any table. This is false because users can only generate reports on tables that they have access to and that are enabled for reporting. For example, a user who does not have the admin role cannot generate reports on the sys_user table, which is the table for user records."
+  },
+  {
+    "number": 15,
+    "question": "Which one of the following is true for a table with the \"Allow configuration\" Application Access option selected?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Only the in scope application's scripts can create Business Rules for the table",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "Any user with the application's user role can modify the application's scripts",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "Out of scope applications can create Business Rules for the table",
+        "correct": true
+      },
+      {
+        "letter": "D",
+        "text": "Out of scope applications can add new tables to the scoped application",
+        "correct": false
+      }
+    ],
+    "answer": "C",
+    "explanation": "The Allow configuration Application Access option determines whether users can configure the application tables, such as adding or modifying fields, views, or indexes. The following is true for a table with the Allow configuration option selected:\nOut of scope applications can create Business Rules for the table. This is true because the Allow configuration option grants access to the table configuration to any user who has the admin or personalize_dictionary role, regardless of the application scope. This means that users can create Business Rules, which are server-side scripts that run when a record is displayed, inserted, updated, or deleted, for the table from any application.\nThe following are not true for a table with the Allow configuration option selected:\nOnly the in scope application's scripts can create Business Rules for the table. This is false because the Allow configuration option does not restrict the creation of Business Rules to the in scope application, as explained above.\n\nAny user with the application's user role can modify the application's scripts. This is false because the Allow configuration option does not grant access to the application scripts, such as client scripts or script includes, to any user who has the application's user role. To modify the application scripts, users need to have the admin role or the application's admin role. Out of scope applications can add new tables to the scoped application. This is false because the Allow configuration option does not allow out of scope applications to add new tables to the scoped application. To add new tables to a scoped application, users need to have the admin role or the application's admin role and be in the application scope."
+  },
+  {
+    "number": 16,
+    "question": "When working in the Form Designer, configuring the label of a field in a child table changes the label on which table(s)?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "base table",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "child table",
+        "correct": true
+      },
+      {
+        "letter": "C",
+        "text": "parent table",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "all tables",
+        "correct": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "Configuring the label of a field in a child table changes the label only on that table, not on the base table or the parent table. The base table is the table that contains the common fields for all the extended tables, and the parent table is the table that is directly extended by the child table. The label of a field on the base table or the parent table can be different from the label on the child table."
+  },
+  {
+    "number": 17,
+    "question": "Which one of the following is true?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "A UI Policy's Actions execute before the UI Policy's Scripts",
+        "correct": true
+      },
+      {
+        "letter": "B",
+        "text": "The execution order for a UI Policy's Scripts and Actions is determined at runtime",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "A UI Policy's Scripts execute before the UI Policy's Actions",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "A UI Policy's Actions and Scripts execute at the same time",
+        "correct": false
+      }
+    ],
+    "answer": "A",
+    "explanation": "Created UI policy on incident form, action set's cmdb_ci field as mandatory and script as not. result, field was not mandatory.\n\nA UI Policy's Actions execute before the UI Policy's Scripts. Actions are predefined operations that can be applied to fields or sections, such as making them mandatory, read-only, visible, or setting a default value. Scripts are custom JavaScript code that can be used to perform more complex logic or validations. Actions are executed first, and then Scripts are executed if the UI Policy conditions are met."
+  },
+  {
+    "number": 18,
+    "question": "Here is the Business Rule script template:\n\n\n\nThis type of JavaScript function is known as:",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Constructor",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "Scoped",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "Anonymous",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "Self-invoking",
+        "correct": true
+      }
+    ],
+    "answer": "D",
+    "explanation": "Self-invoking. Learn JavaScript!\n\nThis type of JavaScript function is known as self-invoking or immediately-invoked function expression (IIFE). It is a function that is defined and executed at the same time, without being assigned to a variable or being called by another function. It is often used to create a local scope for variables and avoid polluting the global namespace."
+  },
+  {
+    "number": 19,
+    "question": "Which method call returns true only if the currently logged in user has the catalog_admin role and in no other case?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "g_user.hasRole(`catalog_admin')",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "g_user.hasRoleExactly(`catalog_admin')",
+        "correct": true
+      },
+      {
+        "letter": "C",
+        "text": "g_user.hasRoleOnly(`catalog_admin')",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "g_user.hasRoleFromList(`catalog_admin')",
+        "correct": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "The method call that returns true only if the currently logged in user has the catalog_admin role and in no other case is g_user.hasRoleExactly(`catalog_admin'). This method checks if the user has exactly one role, and returns true if it matches the argument. The other methods return true if the user has one or more roles, or if the user has any role from a list of arguments."
+  },
+  {
+    "number": 20,
+    "question": "There is a basic strategy when creating a Utils Script Include. Identify the step that does not belong.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Identify the table",
+        "correct": true
+      },
+      {
+        "letter": "B",
+        "text": "Script the function(s)",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "Create a class",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "Create a prototype object from the new class",
+        "correct": false
+      }
+    ],
+    "answer": "A",
+    "explanation": "The step that does not belong when creating a Utils Script Include is identifying the table. A Script Include is a server-side script that can contain one or more classes or functions that can be reused by other scripts. It does not depend on a specific table, but can access any table through GlideRecord or other APIs. The other steps are part of creating a Script Include class and its prototype object."
+  },
+  {
+    "number": 21,
+    "question": "Which roles grant access to source control repository operations such as importing applications from source control, or linking an application to source control? (Choose two.)",
+    "options": [
+      {
+        "letter": "A",
+        "text": "${event. <property name>}",
+        "correct": true
+      },
+      {
+        "letter": "B",
+        "text": "${current. <property name>}",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "${property name>.getDisplayValue()}",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "${gs.<property name>}",
+        "correct": false
+      }
+    ],
+    "answer": "A",
+    "explanation": "The following roles grant access to source control repository operations such as importing applications from source control, or linking an application to source control:\nsource_control. This is a role that allows users to perform basic source control operations, such as importing an application from a source control repository, updating an application from a source control repository, or committing changes to a source control repository.\n\nadmin. This is a role that grants full access to all the features and functions of the ServiceNow platform, including source control operations. Users with this role can also perform advanced source control operations, such as creating or deleting source control repositories, configuring source control properties, or resolving conflicts.\nThe following roles do not grant access to source control repository operations:\nsource_control_admin. This is not a valid role in ServiceNow. There is no separate role for source control administration, as this function is included in the admin role. git_admin. This is not a valid role in ServiceNow. Git is a specific type of source control system that ServiceNow supports, but there is no role dedicated to Git administration."
+  },
+  {
+    "number": 23,
+    "question": "Which one of the following is true for a Script Include with a Protection Policy value of Protected?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Any user with the protected_edit role can see and edit the Script Include",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "The Protection policy option can only be enabled by a user with the admin role",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "The Protection Policy is applied only if the glide.app.apply_protection system property value is true",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "The Protection Policy is applied only if the application is downloaded from the ServiceNow App Store",
+        "correct": true
+      }
+    ],
+    "answer": "D",
+    "explanation": "https://docs.servicenow.com/bundle/rome-application-\ndevelopment/page/build/applications/concept/c_ScriptProtectionPolicy.html\n\nThe following is true for a Script Include with a Protection Policy value of Protected:\nThe Protection Policy is applied only if the application is downloaded from the ServiceNow App Store. This is true because the Protection Policy is a feature that allows developers to protect their Script Includes from being viewed or modified by other users when they distribute their applications through the ServiceNow App Store. The Protection Policy is only enforced when the application is installed from the App Store, not when it is developed or tested on the instance. The following are not true for a Script Include with a Protection Policy value of Protected:\nAny user with the protected_edit role can see and edit the Script Include. This is false because the protected_edit role is not related to the Protection Policy, but to the Access Control (ACL) rules. The protected_edit role allows users to edit protected fields on a table, such as the script field on the sys_script table, which stores the Business Rules. The Protection Policy does not use roles to control access to the Script Includes, but a cryptographic key that is generated when the application is published to the App Store.\nThe Protection policy option can only be enabled by a user with the admin role. This is false because the Protection policy option can be enabled by any user who has the application_admin role for the scoped application that contains the Script Include. The application_admin role grants full access to the application development and administration within the scope of the application. The Protection Policy is applied only if the glide.app.apply_protection system property value is true. This is false because the glide.app.apply_protection system property is not related to the Protection Policy, but to the Application Restricted Caller Access (ARCA) feature. The ARCA feature allows developers to restrict the access to the Script Includes from other applications based on the caller's scope. The glide.app.apply_protection system property determines whether the ARCA feature is enabled or disabled on the instance."
+  },
+  {
+    "number": 24,
+    "question": "Which one of the following is true for GlideUser (g_user) methods?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Can be used in Client Scripts and UI Policies only",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "Can be used in Business Rules only",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "Can be used in Client Scripts, UI Policies, and UI Actions",
+        "correct": true
+      },
+      {
+        "letter": "D",
+        "text": "Can be used in Business Rules, and Scripts Includes",
+        "correct": false
+      }
+    ],
+    "answer": "C",
+    "explanation": "The following is true for GlideUser (g_user) methods:\nCan be used in Client Scripts, UI Policies, and UI Actions. This is true because GlideUser (g_user) methods are part of the client-side scripting APIs that provide information about the current user and the user's preferences. Client Scripts, UI Policies, and UI Actions are all types of client-side scripts that run in the web browser and manipulate the user interface. The following are not true for GlideUser (g_user) methods:\nCan be used in Client Scripts and UI Policies only. This is false because GlideUser (g_user) methods can also be used in UI Actions, which are another type of client-side scripts that can be triggered by a user's click on a button, link, or choice.\nCan be used in Business Rules only. This is false because GlideUser (g_user) methods cannot be used in Business Rules, which are server-side scripts that run on the ServiceNow platform and manipulate the database. Business Rules use a different API to access the current user information, which is GlideSystem (gs).\nCan be used in Business Rules, and Scripts Includes. This is false because GlideUser (g_user) methods cannot be used in Business Rules or Script Includes, which are both server-side scripts. Script Includes are reusable units of code that can be called from any server-side script. Script Includes also use GlideSystem (gs) to access the current user information."
+  },
+  {
+    "number": 25,
+    "question": "When configuring a module, what does the Override application menu roles configuration option do?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Users with the module role but without access to the application menu access the module",
+        "correct": true
+      },
+      {
+        "letter": "B",
+        "text": "Self-Service users can access the module even though they do not have roles",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "Admin is given access to the module even if Access Controls would ordinarily prevent access",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "Users with access to the application menu can see the module even if they don't have the module role",
+        "correct": false
+      }
+    ],
+    "answer": "A",
+    "explanation": "Checkbox tooltip: \"Show this module when the user has the specified roles. Otherwise the user must have the roles specified by both the application menu and the module.\" The following is true for the Override application menu roles configuration option when configuring a module:\nUsers with the module role but without access to the application menu access the module. This is true because the Override application menu roles option allows users to bypass the application menu role requirement and access the module directly if they have the module role. For example, if a module has the itil role and the Override application menu roles option enabled, and the application menu has the admin role, then a user who has the itil role but not the admin role can still access the module.\nThe following are not true for the Override application menu roles configuration option when configuring a module:\nSelf-Service users can access the module even though they do not have roles. This is false because the Override application menu roles option does not grant access to the module to users who do not have any roles. Self-Service users are users who do not have any roles assigned to them and can only access the Self-Service portal and the Knowledge Base. To access the module, users need to have at least the module role.\nAdmin is given access to the module even if Access Controls would ordinarily prevent access. This is false because the Override application menu roles option does not override the Access Control (ACL) rules that apply to the module. Access Control rules are used to restrict the access to the data and functionality of the ServiceNow platform based on the user's roles and conditions. Admin is a role"
+  },
+  {
+    "number": 26,
+    "question": "Which platform feature can be used to determine the relationships between field in an Import Set table to field in an existing ServiceNow table?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Business Service Management Map",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "Data Sources",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "Transform Map",
+        "correct": true
+      },
+      {
+        "letter": "D",
+        "text": "Cl Relationship Builder",
+        "correct": false
+      }
+    ],
+    "answer": "C",
+    "explanation": "A transform map determines the relationships between fields displaying in an Import Set table and fields in an existing ServiceNow table, such as the Incidents or Users table."
+  },
+  {
+    "number": 27,
+    "question": "When configuring a REST Message, the Endpoint is:",
+    "options": [
+      {
+        "letter": "A",
+        "text": "The commands to the REST script to stop execution",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "The URI of the data to be accessed, queried, or modified",
+        "correct": true
+      },
+      {
+        "letter": "C",
+        "text": "Information about the format of the returned data",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "The response from the provider indicating there is no data to send back",
+        "correct": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "When configuring a REST Message, the Endpoint is:\nThe URI of the data to be accessed, queried, or modified. This is the correct answer because the Endpoint is the part of the REST Message that specifies the location and the resource of the REST provider. The Endpoint is composed of the base URL and the resource path, which can include query parameters or variables. For example, the Endpoint for a REST Message that retrieves the weather information for a city from a web service could be https://api.openweathermap.org/data/2.5/weather?q=London. The following are not correct definitions of the Endpoint when configuring a REST Message:\nThe commands to the REST script to stop execution. This is not correct because the commands to the\n\nREST script to stop execution are not part of the REST Message, but of the Scripted REST API, which is a feature that allows users to create custom REST endpoints on the ServiceNow platform. The commands to the REST script to stop execution are methods of the RESTAPIResponse object, such as setStatusCode, setError, or complete.\nInformation about the format of the returned data. This is not correct because the information about the format of the returned data is not part of the Endpoint, but of the HTTP headers or the Accept field of the REST Message. The HTTP headers or the Accept field can be used to specify the content type of the response, such as JSON, XML, or HTML.\nThe response from the provider indicating there is no data to send back. This is not correct because the response from the provider indicating there is no data to send back is not part of the Endpoint, but of the HTTP status code or the response body of the REST Message. The HTTP status code or the response body can be used to indicate the result of the REST request, such as 200 OK, 404 Not Found,\n\nor 500 Internal Server Error."
+  },
+  {
+    "number": 28,
+    "question": "When evaluating Access Controls, ServiceNow searches and evaluates:",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Only for matches on the current table",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "Only for matches on the current field",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "From the most specific match to the most generic match",
+        "correct": true
+      },
+      {
+        "letter": "D",
+        "text": "From the most generic match to the most specific match",
+        "correct": false
+      }
+    ],
+    "answer": "C",
+    "explanation": "When evaluating Access Controls, ServiceNow searches and evaluates:\nFrom the most specific match to the most generic match. This is the correct answer because ServiceNow follows a top-down approach when evaluating Access Control (ACL) rules, which are used to restrict the access to the data and functionality of the ServiceNow platform based on the user's roles and conditions. ServiceNow starts with the most specific match, which is the field-level ACL rule, then moves to the table-level ACL rule, and finally to the global or * ACL rule. ServiceNow grants access if any of the ACL rules evaluates to true, and denies access if all of the ACL rules evaluate to false.\nThe following are not correct descriptions of how ServiceNow searches and evaluates Access Controls:\nOnly for matches on the current table. This is not correct because ServiceNow does not only look for matches on the current table, but also on the parent tables and the global or * table. For example, if there is no ACL rule for the incident table, ServiceNow will look for an ACL rule for the task table, which is the parent table of the incident table, and then for the global or * table, which is the parent table of all tables.\nOnly for matches on the current field. This is not correct because ServiceNow does not only look for matches on the current field, but also on the table that contains the field and the global or * table. For example, if there is no ACL rule for the short_description field on the incident table, ServiceNow will look for an ACL rule for the incident table, and then for the global or * table.\n\nFrom the most generic match to the most specific match. This is not correct because ServiceNow does not follow a bottom-up approach when evaluating Access Controls, but a top-down approach, as explained above."
+  },
+  {
+    "number": 29,
+    "question": "In a Business Rule, which one of the following returns true if the currently logged in user has the admin role?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "g_form.hasRoleExactly(`admin')",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "gs.hasRole(`admin')",
+        "correct": true
+      },
+      {
+        "letter": "C",
+        "text": "g_form.hasRole(`admin')",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "gs.hasRoleExactly(`admin')",
+        "correct": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "Business Rule is server-side, so it uses GlideSystem API. gs.hasRoleExactly doesn't exist\n\nIn a Business Rule, the following returns true if the currently logged in user has the admin role:\ngs.hasRole(`admin'). This is the correct answer because gs is the GlideSystem object, which provides methods for performing system operations, and hasRole is a method that checks if the current user has the specified role. For example, gs.hasRole(`admin') will return true if the current user has the admin role, and false otherwise.\nThe following do not return true if the currently logged in user has the admin role in a Business Rule:\ng_form.hasRoleExactly(`admin'). This is not correct because g_form is the GlideForm object, which provides methods for manipulating forms, and hasRoleExactly is a method that checks if the current user has exactly the specified role and no other roles. For example, g_form.hasRoleExactly(`admin') will return true if the current user has only the admin role, and false if the current user has the admin role and any other role.\ng_form.hasRole(`admin'). This is not correct because g_form is the GlideForm object, which provides methods for manipulating forms, and hasRole is a method that checks if the current user has the specified role or any role that contains the specified role. For example, g_form.hasRole(`admin') will return true if the current user has the admin role or any role that contains the admin role, such as admin_ui or admin_script.\ngs.hasRoleExactly(`admin'). This is not correct because gs is the GlideSystem object, which provides methods for performing system operations, and hasRoleExactly is not a valid method of the gs object. There is no method that checks if the current user has exactly the specified role and no other roles in the gs object."
+  },
+  {
+    "number": 30,
+    "question": "From the list below, identify one reason an application might NOT be a good fit with ServiceNow.\n\nThe application:",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Needs workflow to manage processes",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "Requires \"as-is\" use of low-level programming libraries",
+        "correct": true
+      },
+      {
+        "letter": "C",
+        "text": "Requires reporting capabilities",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "Uses forms extensively to interact with data",
+        "correct": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "From the list below, the following is a reason an application might not be a good fit with ServiceNow:\nRequires \"as-is\" use of low-level programming libraries. This is the correct answer because ServiceNow is a high-level platform that abstracts away the low-level details of the underlying infrastructure and technology stack. ServiceNow provides a rich set of APIs, tools, and features that allow users to develop applications without coding or with minimal coding. However, ServiceNow does not support the direct"
+  },
+  {
+    "number": 31,
+    "question": "Identify the incorrect statement about Delegated Development in ServiceNow.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Administrators can grant non-admin users the ability to develop global applications.",
+        "correct": true
+      },
+      {
+        "letter": "B",
+        "text": "Administrators can specify which application file types the developer can access.",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "Administrators can grant the developer access to script fields.",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "Administrators can grant the developer access to security records.",
+        "correct": false
+      }
+    ],
+    "answer": "A",
+    "explanation": "Administrators can grant non-admin users the ability to develop global applications. Delegated Development is for the scoped applications only"
+  },
+  {
+    "number": 32,
+    "question": "What is the REST API Explorer used to do?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Practice using REST to interact with public data providers",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "Find resources on the web for learning about REST",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "Convert SOAP Message functions to REST methods",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "Create sample code for sending REST requests to ServiceNow",
+        "correct": true
+      }
+    ],
+    "answer": "D",
+    "explanation": "One of the uses of the ServiceNow REST API Explorer is to create sample code for sending REST requests to ServiceNow. The REST API Explorer is a tool that allows you to discover and test the ServiceNow REST APIs. You can select an API endpoint, set the HTTP method, parameters, headers, and body, and then execute the request. The REST API Explorer will show you the response status, headers, and body, as well as generate sample code for various languages and frameworks, such as cURL, Java, JavaScript, Node.js, Python, Ruby, and more."
+  },
+  {
+    "number": 33,
+    "question": "Which one of the following is true regarding Application Scope?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "All applications are automatically part of the Global scope",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "Applications downloaded from 3rd party ServiceNow application developers cannot have naming conflicts",
+        "correct": true
+      },
+      {
+        "letter": "C",
+        "text": "Any developer can edit any application",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "Developers can choose the prefix for a scope's namespace",
+        "correct": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "https://docs.servicenow.com/bundle/rome-application-\ndevelopment/page/build/applications/concept/c_ApplicationScope.html The correct statement regarding Application Scope is that applications downloaded from 3rd party ServiceNow application developers cannot have naming conflicts. Application Scope is a feature that identifies and isolates applications and their related artifacts from other applications. Each scoped application has a unique namespace identifier that consists of a prefix and a scope name. This prevents cross-application name collisions and ensures that only authorized scripts can access or modify data in a scoped application."
+  },
+  {
+    "number": 34,
+    "question": "Which one of the following is the baseline behavior of a table in a privately-scoped application?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "The table and its data are not accessible using web services",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "Any Business Rule can read, write, delete, and update from the table",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "Only artifacts in the table's application can read from the table",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "All application scopes can read from the table",
+        "correct": true
+      }
+    ],
+    "answer": "D",
+    "explanation": "https://docs.servicenow.com/bundle/rome-application-\ndevelopment/page/build/applications/concept/c_DefaultDesignAccessPermissions.html The baseline behavior of a table in a privately-scoped application is that all application scopes can read from the table. A privately-scoped application is an application that restricts write access to its tables and resources to scripts within the same scope. However, read access is allowed by default for all scopes, unless the administrator explicitly denies it using an Access Control rule. This allows for data sharing between different applications while maintaining data integrity and security."
+  },
+  {
+    "number": 35,
+    "question": "Which one of the following is NOT a purpose of application scoping?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Provide a relationship between application artifacts",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "Provide a way of tracking the user who developed an application",
+        "correct": true
+      },
+      {
+        "letter": "C",
+        "text": "Provide a namespace (prefix and scope name) to prevent cross application name collisions",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "Provide controls for how scripts from another scope can alter tables in a scoped application",
+        "correct": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "The purpose of application scoping is NOT to provide a way of tracking the user who developed an application. Application scoping does not store or display information about the user who created or modified an application or its artifacts. The purpose of application scoping is to provide a relationship between application artifacts, provide a namespace to prevent cross-application name collisions, and provide controls for how scripts from another scope can alter tables in a scoped application."
+  },
+  {
+    "number": 36,
+    "question": "It is best practice to define the business requirements and the process(es) an application will manage as part of the application development plan. \nWhat are some of the considerations to document as part of the business process?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Business problem, data input/output, users/stakeholders, and process steps",
+        "correct": true
+      },
+      {
+        "letter": "B",
+        "text": "Business problem, data input/output, project schedule, and process steps",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "Business problem, data input/output, users/stakeholders, and database capacity",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "Business problem, users/stakeholders, available licenses, and database capacity",
+        "correct": false
+      }
+    ],
+    "answer": "A",
+    "explanation": "It is best practice to define the business requirements and the process(es) an application will manage as part of the application development plan. The following are some of the considerations to document as part of the business process:\nBusiness problem. This is the description of the problem or opportunity that the application is intended to address or exploit. It should include the background, context, scope, and objectives of the problem or opportunity.\nData input/output. This is the specification of the data that the application will need to collect, store, manipulate, and display. It should include the data sources, formats, validations, transformations, and integrations of the data.\nUsers/stakeholders. This is the identification of the users and stakeholders who will be involved in or affected by the application. It should include the roles, responsibilities, expectations, and needs of the users and stakeholders.\nProcess steps. This is the definition of the steps and activities that the application will perform or support. It should include the inputs, outputs, triggers, conditions, and outcomes of each step or activity.\nThe following are not some of the considerations to document as part of the business process:\nProject schedule. This is the estimation of the time and resources required to complete the application development project. It should include the milestones, deliverables, dependencies, and risks of the project. This is not part of the business process, but part of the project management plan. Database capacity. This is the measurement of the amount of data that the application will generate and store in the database. It should include the data volume, growth rate, retention policy, and backup strategy of the data. This is not part of the business process, but part of the technical design and architecture of the application.\nAvailable licenses. This is the number and type of licenses that the application will consume or require from the ServiceNow platform. It should include the license model, cost, and allocation of the licenses. This is not part of the business process, but part of the financial and legal aspects of the application."
+  },
+  {
+    "number": 37,
+    "question": "Which of the following statements does NOT apply when extending an existing table?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "The parent table's Access Controls are evaluated when determining access to the new table's records and fields",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "The new table inherits the functionality built into the parent table",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "The new table inherits all of the fields from the parent table",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "You must script and configure all required behaviors",
+        "correct": true
+      }
+    ],
+    "answer": "D",
+    "explanation": "You must script and configure all required behaviors Provided link has this statement: Extending an existing ServiceNow table means the new table inherits the parent table's columns as well as its business logic.\n\nThe following statements apply when extending an existing table:\nThe parent table's Access Controls are evaluated when determining access to the new table's records and fields. This is true because Access Control (ACL) rules are inherited from the parent table to the child table, unless the child table has its own ACL rules that override the parent table's rules. ACL rules are used to restrict the access to the data and functionality of the ServiceNow platform based on the user's roles and conditions.\nThe new table inherits the functionality built into the parent table. This is true because the new table inherits the business logic and the relationships from the parent table, such as Business Rules, Script Includes, UI Actions, UI Policies, and Reference Fields. Business logic and relationships are used to define the behavior and the structure of the data on the ServiceNow platform. The new table inherits all of the fields from the parent table. This is true because the new table inherits the columns and the attributes from the parent table, such as Field Name, Data Type, Default Value, and Mandatory. Columns and attributes are used to define the properties and the characteristics of the data on the ServiceNow platform. The following statement does not apply when extending an existing table:\nYou must script and configure all required behaviors. This is false because you do not have to script and configure all required behaviors when extending an existing table, as some of the behaviors are already inherited from the parent table, as explained above. However, you can script and configure additional or customized behaviors for the new table, such as adding new fields, creating new Business Rules, or modifying existing UI Actions."
+  },
+  {
+    "number": 38,
+    "question": "Which of the following CANNOT be debugged using the Field Watcher?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Business Rules",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "Script Includes",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "Client Scripts",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "Access Controls",
+        "correct": true
+      }
+    ],
+    "answer": "D",
+    "explanation": "The Field Watcher is a debugging tool that allows you to monitor the values of fields on a form as they change due to scripts or other actions. It can be used to debug Business Rules, Client Scripts, and Access Controls, but not Script Includes. Script Includes are server-side scripts that define reusable functions and classes. They are not associated with any specific field or form, and therefore cannot be watched by the Field Watcher."
+  },
+  {
+    "number": 39,
+    "question": "Which objects can be used in Inbound Action scripts?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "current and previous",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "current and email",
+        "correct": true
+      },
+      {
+        "letter": "C",
+        "text": "current and event",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "current and producer",
+        "correct": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "Inbound Action scripts are server-side scripts that run when an email is received by the system. They can use the current object to access the record that is created or updated by the email, and the email object to access the properties and methods of the email message. The previous and event objects are not available in Inbound Action scripts. The producer object is only available in Record Producer scripts, which are used to create records from a service catalog item."
+  },
+  {
+    "number": 40,
+    "question": "Which one of the following is part of the client-side scripting API?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "workflow.scratchpad",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "GlideUser object (g_user)",
+        "correct": true
+      },
+      {
+        "letter": "C",
+        "text": "current and previous objects",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "GlideSystem object (gs)",
+        "correct": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "https://developer.servicenow.com/dev.do#!/reference/api/rome/client The GlideUser object (g_user) is part of the client-side scripting API that provides information about the current user and the user's preferences. It can be used in Client Scripts and UI Policies to customize the user interface based on the user's role, language, time zone, etc. The workflow.scratchpad object is only available in Workflow scripts, which are used to automate processes on the platform. The current and previous objects are only available in server-side scripts, such as Business Rules and Script Includes. The GlideSystem object (gs) is also a server-side object that provides methods for logging, debugging, date and time calculations, etc."
+  },
+  {
+    "number": 41,
+    "question": "Application developers configure ServiceNow using industry standard JavaScript to...",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Enable the right-click to edit the context menus on applications in the navigator",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "Extend and add functionality",
+        "correct": true
+      },
+      {
+        "letter": "C",
+        "text": "Customize the organization's company logo and banner text",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "Configure the outgoing email display name",
+        "correct": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "Application developers configure ServiceNow using industry standard JavaScript to extend and add functionality. JavaScript is a scripting language that enables developers to create dynamic and interactive web pages, as well as manipulate data and logic on the server-side. ServiceNow provides various APIs and frameworks for developers to use JavaScript to customize and enhance the functionality of their applications, such as client scripts, UI policies, business rules, script includes, UI actions, and more."
+  },
+  {
+    "number": 42,
+    "question": "How many applications menus can an application have?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "3, one for an application's user modules, one for an application's administrator modules, and one for the ServiceNow administrator's modules",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "As many as the application design requires",
+        "correct": true
+      },
+      {
+        "letter": "C",
+        "text": "2, one for an application's user modules and one for an application's administrator modules",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "1, which is used for all application modules",
+        "correct": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "The source control operation used to store local changes on an instance for later application is called a stash. A stash is a temporary storage area for uncommitted changes that are not ready to be pushed to a remote repository. Developers can use stashes to save their work in progress without committing it to the local repository or discarding it. Stashes can be applied later to restore the changes to the working directory, or dropped if they are no longer needed."
+  },
+  {
+    "number": 43,
+    "question": "The source control operation used to store local changes on an instance for later application is called a(n)\n<blank>.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Branch",
+        "correct": true
+      },
+      {
+        "letter": "B",
+        "text": "Tag",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "Stash",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "Update set",
+        "correct": false
+      }
+    ],
+    "answer": "A",
+    "explanation": "The source control operation used to store local changes on an instance for later application is called a stash. A stash is a temporary storage area for uncommitted changes that are not ready to be pushed to a remote repository. Developers can use stashes to save their work in progress without committing it to the local repository or discarding it. Stashes can be applied later to restore the changes to the working directory, or dropped if they are no longer needed."
+  },
+  {
+    "number": 44,
+    "question": "What syntax is used in a Record Producer script to access values from Record Producer form fields?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "producer.field_name",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "producer.variablename",
+        "correct": true
+      },
+      {
+        "letter": "C",
+        "text": "current.variable_name",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "current.field_name",
+        "correct": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "The syntax used in a Record Producer script to access values from Record Producer form fields is producer.variable_name. A Record Producer is a type of catalog item that allows users to create records on any table from the service catalog. A Record Producer script is a server-side script that runs when a Record Producer is submitted, and can be used to set values or perform actions on the generated record. The producer object is a global object that represents the Record Producer form and its variables. The variable_name is the name of the variable defined in the Record Producer."
+  },
+  {
+    "number": 45,
+    "question": "Which of the following methods prints a message on a blue background to the top of the current form by default?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "g_form.addInfoMsg()",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "g_form.addInfoMessage()",
+        "correct": true
+      },
+      {
+        "letter": "C",
+        "text": "g_form.showFieldMessage()",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "g_form.showFieldMsg()",
+        "correct": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "From: https://docs.servicenow.com/bundle/paris-application-development/page/script/general- scripting/reference/r_ScriptingAlertInfoAndErrorMsgs.html g_form.showFieldMsg(\"field_name\", \"Hello World\", \"error\"); Puts \"Hello World\" in an error message **below the specified field**. g_form.addInfoMessage() or g_form.addErrorMessage() place a blue box message at the top of the screen. Pg 126 of the CAD handbook The method that prints a message on a blue background to the top of the current form by default is g_form.addInfoMessage(). The g_form object is a global object that provides access to form fields and UI elements on a form. The addInfoMessage() method is a method of the g_form object that displays an informational message next to the form header. The message has a blue background color by default, unless it is overridden by a CSS style. The addInfoMessage() method takes one argument, which is the message text to display."
+  },
+  {
+    "number": 46,
+    "question": "A scoped application containing Flow Designer content dedicated to a particular application is called a(n):",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Spoke",
+        "correct": true
+      },
+      {
+        "letter": "B",
+        "text": "Bundle",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "Action",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "Flow",
+        "correct": false
+      }
+    ],
+    "answer": "A",
+    "explanation": "https://docs.servicenow.com/bundle/paris-servicenow-platform/page/administer/flow- designer/concept/spokes.html\n\nA spoke is a scoped application containing Flow Designer content dedicated to a particular application or record type. Flow Designer provides a set of core actions to automate Now Platform&#174; processes. You can add application-specific core actions by activating the associated spoke."
+  },
+  {
+    "number": 47,
+    "question": "What is a Module?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "The functionality within an application menu such as opening a page in the content frame or a separate tab or window",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "A group of menus, or pages, providing related information and functionality to end-users",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "A way of helping users quickly access information and services by filtering the items in the Application Navigator",
+        "correct": true
+      },
+      {
+        "letter": "D",
+        "text": "A web-based way of providing software to end-users",
+        "correct": false
+      }
+    ],
+    "answer": "C",
+    "explanation": "https://docs.servicenow.com/bundle/rome-platform-user-interface/page/administer/navigation- and-ui/task/t_CreateAModule.html\n\nA module is the functionality within an application menu such as opening a page in the content frame or a separate tab or window. For example, Open is a module under the Problem application menu that opens a list of problem records. Modules are the second level navigation options for applications."
+  },
+  {
+    "number": 48,
+    "question": "Which source control operation is available from BOTH Studio and the Git Repository?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Create Branch",
+        "correct": true
+      },
+      {
+        "letter": "B",
+        "text": "Apply Remote Changes",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "Stash Local Changes",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "Edit Repository Configurations",
+        "correct": false
+      }
+    ],
+    "answer": "A",
+    "explanation": "The Create Branch operation is available from both Studio and the Git Repository. This operation allows you to create a new branch from an existing branch in your Git repository. You can use branches to work on different features or versions of your application without affecting the main branch."
+  },
+  {
+    "number": 49,
+    "question": "Which one of the following is NOT required to link a ServiceNow application to a Git repository?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Password",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "URL",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "User name",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "Application name",
+        "correct": true
+      }
+    ],
+    "answer": "D",
+    "explanation": "The application name is not required to link a ServiceNow application to a Git repository. You only need to provide the URL, user name, and password of the Git repository, as well as the branch name and the authentication type. The application name is automatically generated based on the scope name of your application."
+  },
+  {
+    "number": 50,
+    "question": "Which Report Type(s) can be created by right-clicking on a column header in a table's list?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Bar Chart, Pie Chart, Histogram, and Line",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "Bar Chart",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "Bar Chart, Pie Chart, and Histogram",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "Bar Chart and Pie Chart",
+        "correct": true
+      }
+    ],
+    "answer": "D",
+    "explanation": "The Bar Chart and Pie Chart report types can be created by right-clicking on a column header in a table's list. These report types show how individual pieces of data relate to the whole using proportional bars or slices. You can also choose different aggregation methods such as count, sum, average, min, max, or percent."
+  },
+  {
+    "number": 51,
+    "question": "Which one of the following is NOT a method used for logging messages in a server-side script for a privately- scoped application?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "gs.log()",
+        "correct": true
+      },
+      {
+        "letter": "B",
+        "text": "gs.error()",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "gs.warn()",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "gs.debug()",
+        "correct": false
+      }
+    ],
+    "answer": "A",
+    "explanation": "gs.print() and gs.log() are older and not available in scoped applications, whereas gs.debug(), gs.info(), gs.warn(), gs.error() work in both scoped applications and global are therefore are more versatile going forward in future versions."
+  },
+  {
+    "number": 52,
+    "question": "If the Create module field is selected when creating a table, what is the new module's default behavior?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Open an empty form so new records can be created",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "Open a link to a wiki article with instructions on how to customize the behavior of the new module",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "Display an empty homepage for the application",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "Display a list of all records from the table",
+        "correct": true
+      }
+    ],
+    "answer": "D",
+    "explanation": "When creating a table, the Create module field allows you to automatically create a module for the table in the application menu. The default behavior of the new module is to display a list of all records from the table. This can be changed later by editing the module properties and specifying a different link type, such as form, URL, or script."
+  },
+  {
+    "number": 53,
+    "question": "How must Application Access be configured to prevent all other private application scopes from creating configuration records on an application's data tables?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "You must create Access Controls to prevent all other application scopes from creating configuration records on an application's data tables rather than using Application Access",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "Set the Accessible from field value to All application scopes and de-select the Can create option",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "Set the Accessible from field value to This application scope only and de-select the Allow access to this table via web services option",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "Set the Accessible from field value to This application scope only",
+        "correct": true
+      }
+    ],
+    "answer": "D",
+    "explanation": "Application Access is a feature that allows you to control the access level of other application scopes to your application's data tables. By setting the Accessible from field value to This application scope only, you can restrict the access to your data tables to only your application scope. This means that other application scopes cannot create, read, write, or delete records on your data tables, unless they have explicit permissions through Access Controls or other means."
+  },
+  {
+    "number": 54,
+    "question": "What are some of the benefits of extending an existing table such as the Task table when creating a new application?\n\na) You can repurpose existing fields by simply changing the label.\nb) Use existing fields with no modifications.\n\nc) Existing logic from the parent table will be automatically applied to the new table. d) All of the parent table records are copied to the new table.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "a, b, c, and d",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "a and b",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "b and c",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "a, b, and c",
+        "correct": true
+      }
+    ],
+    "answer": "D",
+    "explanation": "Extending an existing table such as the Task table when creating a new application has several benefits, such as:\nYou can repurpose existing fields by simply changing the label. For example, you can change the Short description field to Summary or Title for your new table. You can use existing fields with no modifications. For example, you can use the Assigned to, Priority, and State fields for your new table without changing anything. Existing logic from the parent table will be automatically applied to the new table. For example, you can inherit the Business Rules, Client Scripts, and UI Policies from the Task table for your new table. The only option that is not true is d) All of the parent table records are copied to the new table. Extending a table does not copy any records from the parent table to the new table. It only creates a new table that inherits the fields and logic from the parent table."
+  },
+  {
+    "number": 55,
+    "question": "When configuring an Access Control which has no condition or script, which one of the following statements is NOT true?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "table.*will grant access to every field in a record",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "table.None will grant access to every record on the table",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "table.field will grant access to a specific field in a record",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "table.id will grant access to a specific record on the table",
+        "correct": true
+      }
+    ],
+    "answer": "D",
+    "explanation": "Access Controls are rules that define who can access what data and how they can access it. \nWhen configuring an Access Control, you can specify the table, operation, and role for the rule. You can also add a condition or a script to further refine the rule. If you do not add a condition or a script, the rule will apply to all records and fields on the table.\nThe statements A, B, and C are true for Access Controls that have no condition or script. For example:\ntable.* will grant access to every field in a record. This means that the user can view and edit all the fields on the record, regardless of their role or any other criteria. table.None will grant access to every record on the table. This means that the user can view and edit all the records on the table, regardless of their role or any other criteria. table.field will grant access to a specific field in a record. This means that the user can view and edit only that field on the record, regardless of their role or any other criteria. The statement D is not true for Access Controls that have no condition or script. table.id will not grant access to a specific record on the table. This is because the id is not a field name, but a unique identifier for the record. To grant access to a specific record on the table, you need to add a condition or a script that matches the id of the record."
+  },
+  {
+    "number": 56,
+    "question": "Which of the following methods are useful in Access Control scripts?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "g_user.hasRole() and current.isNewRecord()",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "gs.hasRole() and current.isNewRecord()",
+        "correct": true
+      },
+      {
+        "letter": "C",
+        "text": "g_user.hasRole() and current.isNew()",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "gs.hasRole() and current.isNew()",
+        "correct": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "Access Control scripts are server-side scripts that run when an Access Control rule is evaluated. They can use the gs and current objects to access the GlideSystem and GlideRecord methods, respectively. Some of the useful methods in Access Control scripts are:\n\ngs.hasRole() - This method checks if the current user has a specified role. It returns true if the user has the role, and false otherwise. For example, gs.hasRole(`admin') will return true if the user is an administrator, and false otherwise.\ncurrent.isNewRecord() - This method checks if the current record is a new record that has not been inserted into the database yet. It returns true if the record is new, and false otherwise. For example, current.isNewRecord() will return true if the record is being created, and false if the record is being updated or deleted.\nThe methods g_user.hasRole() and current.isNew() are not part of the server-side scripting API. They are part of the client-side scripting API, which is used in Client Scripts and UI Policies. They cannot be used in Access Control scripts."
+  },
+  {
+    "number": 57,
+    "question": "Which one of the following client-side scripts apply to Record Producers?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Catalog Client Scripts and Catalog UI Policies",
+        "correct": true
+      },
+      {
+        "letter": "B",
+        "text": "UI Scripts and UI Actions",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "UI Scripts and Record Producer Scripts",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "Client Scripts and UI Policies",
+        "correct": false
+      }
+    ],
+    "answer": "A",
+    "explanation": "Catalog Client Scripts and Catalog UI Policies are the client-side scripts that apply to Record Producers. Catalog Client Scripts allow you to add or modify functionality on a catalog item or record producer form. Catalog UI Policies dynamically change information on a catalog item or record producer form. UI Scripts, UI Actions, Client Scripts, and UI Policies do not apply to Record Producers."
+  },
+  {
+    "number": 58,
+    "question": "When a ServiceNow instance requests information from a web service, ServiceNow is the web service:",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Publisher",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "Specialist",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "Provider",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "Consumer",
+        "correct": true
+      }
+    ],
+    "answer": "D",
+    "explanation": "When a ServiceNow instance requests information from a web service, ServiceNow is the web service consumer. A web service consumer is an application that sends requests to a web service provider and receives responses from it. A web service provider is an application that exposes its functionality as web services. A web service publisher is a person or organization that publishes web services for others to use. A web service specialist is a person who has expertise in developing or using web services."
+  },
+  {
+    "number": 59,
+    "question": "Which one of the following is the fastest way to create and configure a Record Producer?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Create a Catalog Category, open the category, and select the Add New Record Producer button",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "Use the Record Producer module then add and configure all variables manually",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "Open the table in the Table records and select the Add to Service Catalog Related Link",
+        "correct": true
+      },
+      {
+        "letter": "D",
+        "text": "Open the table's form, right-click on the form header, and select the Create Record Producer menu item",
+        "correct": false
+      }
+    ],
+    "answer": "C",
+    "explanation": "The fastest way to create and configure a Record Producer is to open the table in the Table records and select the Add to Service Catalog Related Link. This will automatically create a Record Producer with the same fields as the table and add it to the Service Catalog. You can then modify the Record Producer as needed. The other options require more steps and manual configuration."
+  },
+  {
+    "number": 60,
+    "question": "Which objects can you use in a Scheduled Script Execution (Scheduled Job) script?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "GlideRecord and current",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "GlideUser and GlideRecord",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "GlideSystem and GlideRecord",
+        "correct": true
+      },
+      {
+        "letter": "D",
+        "text": "GlideSystem and current",
+        "correct": false
+      }
+    ],
+    "answer": "C",
+    "explanation": "https://developer.servicenow.com/dev.do#!/learn/learning- plans/quebec/servicenow_administrator/app_store_learnv2_automatingapps_quebec_scheduled_s cript_execution_scripts\nThe objects that you can use in a Scheduled Script Execution (Scheduled Job) script are GlideSystem and GlideRecord. GlideSystem provides methods for performing system operations, such as logging, running background scripts, or getting system information. GlideRecord provides methods for working with records in the database, such as querying, updating, inserting, or deleting records. The current object is not available in Scheduled Script Execution scripts, as it refers to the current record on a form or list. The GlideUser object is also not available, as it refers to the current user session."
+  },
+  {
+    "number": 61,
+    "question": "Which of the following is true for the Application Picker and Application Scope?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Selecting application from the Application Picker does not set the Application Scope.",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "Selecting Global in the Application Picker sets the Application Scope to incident",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "Global is a reserved application which does not appear in the Application Picker",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "Selecting an application from the Application Picker sets the Application Scope",
+        "correct": true
+      }
+    ],
+    "answer": "D",
+    "explanation": "\"Application developers must select an application as their current scope context.\" https://docs.servicenow.com/bundle/tokyo-application-\ndevelopment/page/build/applications/task/t_SelectAnAppFromTheAppPicker.html"
+  },
+  {
+    "number": 62,
+    "question": "Which of the following is an available feature in Studio? Choose 2 answers",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Any field on a table can be deleted",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "User-defined non-inherited fields can be detected",
+        "correct": true
+      },
+      {
+        "letter": "C",
+        "text": "Inherited fields can be detected",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "Table records are deleted when a field is detected",
+        "correct": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "Search branch and merge branches are available features in Studio. Search branch allows you to search for a specific branch name or ID in your Git repository. Merge branches allows you to merge changes from one branch to another, resolving any conflicts that may arise. Push to external source control and push to update set are not available features in Studio. Push to external source control is a feature of Source Control Integration, which is a separate application from Studio. Push to update set is a feature of Update Set Previewer, which is also a separate application from Studio."
+  },
+  {
+    "number": 65,
+    "question": "Which of the following statements is true about Guided Application Creator?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "The global scope option is turned on by default",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "A scope application user role is automatically created",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "Default access controls are automatically created",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "The welcome screen appears every time a new application is created",
+        "correct": true
+      }
+    ],
+    "answer": "D",
+    "explanation": "The welcome screen appears every time a new application is created through the Guided Application Creator. The welcome screen provides an overview of the steps involved in creating an application, such as defining the app name, scope, and tables, configuring the app user interface, and publishing the app. The other options are not true about the Guided Application Creator. The global scope option is turned off by default, as it is recommended to create applications in their own scope for better security and performance. A scope application user role is not automatically created, as the user can choose to create one or use an existing role for the app access control. Default access controls are not automatically created, as the user can define the read, write, create, and delete permissions for each table in the app."
+  },
+  {
+    "number": 66,
+    "question": "When creating an application through the Guided Application Creator, which of the following is NOT an option for creating a table?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Upload spreadsheet",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "Create table from template",
+        "correct": true
+      },
+      {
+        "letter": "C",
+        "text": "Extend a table",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "Create table from scratch",
+        "correct": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "Create table from template is not an option for creating a table through the Guided Application Creator. The other options are available for creating a table in the app. Upload spreadsheet allows you to import data from an Excel file and create a table based on the spreadsheet columns and rows. Extend a table allows you to create a child table that inherits fields and behaviors from a parent table. Create table from scratch allows you to define your own fields and data types for a new table."
+  },
+  {
+    "number": 67,
+    "question": "Why would you build a custom app?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Use the Choice data type to limit options in a field",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "Use the Data data type to enter the date and time of day.",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "Use the Phone Number data type to automate phone number data validation.",
+        "correct": true
+      },
+      {
+        "letter": "D",
+        "text": "Use the string data type for a free-form text field.",
+        "correct": false
+      }
+    ],
+    "answer": "C",
+    "explanation": "A possible reason to build a custom app is to fulfill a specific use case on internal processes. For example, you may want to digitize a manual process that is not covered by an existing ServiceNow solution, such as managing inventory, tracking expenses, or scheduling events. Building a custom app on the Now Platform can help you automate workflows, improve data quality, and provide better user experiences. The other options are not valid reasons to build a custom app. To avoid using a code repository like GitHub or GitLab is not a reason to build a custom app, as you can still use source control integration with your custom app development. To create a custom integration for a 3rd party system is not a reason to build a custom app, as you can use integration tools such as IntegrationHub or REST APIs to connect with external systems without creating an app. To replace ServiceNow base tables is not a reason to build a custom app, as it is not recommended to modify or delete base tables that are essential for ServiceNow functionality."
+  },
+  {
+    "number": 70,
+    "question": "Which one of the following is NOT part of the Form Designer?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Form layout",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "Page header",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "Schema map",
+        "correct": true
+      },
+      {
+        "letter": "D",
+        "text": "Field navigator",
+        "correct": false
+      }
+    ],
+    "answer": "C",
+    "explanation": "https://developer.servicenow.com/dev.do#!/learn/courses/sandiego/app_store_learnv2_learnmore _sandiego_learn_more/app_store_learnv2_learnmore_sandiego_form_and_list_layouts/app_store_ learnv2_learnmore_sandiego_what_is_form_designer\nThe Form Designer is a tool that allows you to create and customize forms on the ServiceNow platform. The Form Designer has four main components:\nForm layout: The form layout shows the preview of the form and allows you to drag and drop fields, sections, and related lists onto the form. You can also resize, reorder, and delete the elements on the form layout.\nPage header: The page header shows the name of the table and the form that you are editing. You can also access the form properties, save the form, and switch to the form view from the page header.\nField navigator: The field navigator shows the list of available fields for the table and allows you to search, filter, and add fields to the form. You can also create new fields and edit existing fields from the field navigator.\nSchema map: The schema map is not part of the Form Designer. The schema map is a separate tool that shows the relationships between tables and fields on the platform. You can access the schema map from the System Definition > Tables module or from the context menu of a table."
+  },
+  {
+    "number": 71,
+    "question": "Which class is NOT part of the Client side scoped APIs?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "GuideDialogWindow",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "GuideAjex",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "GuideRecord",
+        "correct": true
+      },
+      {
+        "letter": "D",
+        "text": "GuideForm",
+        "correct": false
+      }
+    ],
+    "answer": "C",
+    "explanation": "This class allows you to create and manipulate dialog windows on the user interface. You can use this class to display messages, forms, or custom HTML content in a modal window. GuideAjex: This class allows you to make asynchronous calls to the server and process the response. You can use this class to retrieve data, execute scripts, or perform actions on the server without reloading the page.\nGuideForm: This class allows you to access and manipulate the fields and values on a form. You can use this class to get or set field values, show or hide fields, add or remove options, or validate field inputs.\nThe class GuideRecord is not part of the Client side scoped APIs. GuideRecord is part of the Server side scoped APIs, which are a set of classes and methods that allow you to interact with the database and perform server-side logic on the ServiceNow platform. GuideRecord is a class that represents a record in a table and allows you to query, insert, update, or delete records on the server."
+  },
+  {
+    "number": 72,
+    "question": "When designing and creating a form, what do you create to organize fields on a form?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Related lists",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "Tabs",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "Sections",
+        "correct": true
+      },
+      {
+        "letter": "D",
+        "text": "Buttons",
+        "correct": false
+      }
+    ],
+    "answer": "C",
+    "explanation": "When designing and creating a form, you can create sections to organize fields on a form. Sections are containers that group related fields together and provide a label and a description for the group. You can use sections to improve the readability and usability of the form. You can also collapse or expand sections to show or hide the fields within them. The other options are not valid ways to organize fields on a form. Related lists are not fields, but lists of records that are related to the current record on the form. Tabs are not part of the form, but part of the application menu that allows you to navigate between different modules. Buttons are not fields, but elements that perform actions on the form, such as saving, updating, or deleting the record."
+  },
+  {
+    "number": 73,
+    "question": "Which of the following is a good practice for adding instructions to a form?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Annotations",
+        "correct": true
+      },
+      {
+        "letter": "B",
+        "text": "Related links to wiki pages",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "A context Menu UI Action",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "A population read-only field",
+        "correct": false
+      }
+    ],
+    "answer": "A",
+    "explanation": "\"Add instructional text and other design elements to your forms by using form annotations in Form\n\nBuilder.\" https://docs.servicenow.com/bundle/sandiego-application- development/page/administer/form-builder/task/create-form-annotations.html"
+  },
+  {
+    "number": 74,
+    "question": "Which of the following GuideRecord methods run a query against a database table? Choose 3 answers",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Forms and Forms Fields",
+        "correct": true
+      },
+      {
+        "letter": "B",
+        "text": "Playbook access",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "Database and backend",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "User access",
+        "correct": false
+      }
+    ],
+    "answer": "A",
+    "explanation": "https://docs.servicenow.com/bundle/tokyo-application-development/page/app- store/dev_portal/API_reference/GlideQuery/concept/GlideQueryGlobalAPI.html#GlideQueryAPI https://docs.servicenow.com/bundle/tokyo-application-development/page/app- store/dev_portal/API_reference/glideRecordScoped/concept/c_GlideRecordScopedAPI.html"
+  },
+  {
+    "number": 76,
+    "question": "In a Business Rule, which one of the following returns the sys_id of the currently logged in user?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "g_form getUserID()",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "g_form getUserSysy",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "gs.getUserSysID()",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "gs.getUserID()",
+        "correct": true
+      }
+    ],
+    "answer": "D",
+    "explanation": "https://docs.servicenow.com/bundle/tokyo-application-development/page/app- store/dev_portal/API_reference/glideSystemScoped/concept/c_GlideSystemScopedAPI.html"
+  },
+  {
+    "number": 77,
+    "question": "Access Control debug information identification whether each element of an Access Control granted of denied access. The elements of an Access Control evaluated?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Conditions, Script, Roles",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "Script, Conditions, Roles",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "Conditions, Roles, Script",
+        "correct": true
+      },
+      {
+        "letter": "D",
+        "text": "Roles, Conditions, Script",
+        "correct": false
+      }
+    ],
+    "answer": "C",
+    "explanation": "The elements of an Access Control are evaluated in the following order: Conditions, Roles, Script. The Conditions are a set of criteria that must be met for the Access Control to apply. The Roles are a list of user roles that are required to access the object. The Script is an optional script that can further restrict or allow access based on custom logic. If any of these elements return false, the Access Control denies access and stops evaluating the remaining elements."
+  },
+  {
+    "number": 78,
+    "question": "What plugin enables the Guided Application Creator?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "com.glide.sn-guided-app-creator",
+        "correct": true
+      },
+      {
+        "letter": "B",
+        "text": "com.glide.service_creator",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "com.glide.snc.apps_creator",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "com.snc.apps_creator_template",
+        "correct": false
+      }
+    ],
+    "answer": "A",
+    "explanation": "\"Guided Application Creator is enabled via the Guided Application Creator (com.glide.sn-guided-app- creator) plugin, which is active by default in the Now Platform.\" Located under \"Activation Information\" section at this URL:\nhttps://docs.servicenow.com/en-US/bundle/tokyo-application-development/page/build/guided- app-creator/concept/guided-app-creator.html"
+  },
+  {
+    "number": 79,
+    "question": "When writing a Client Script to provide feedback targeted at a specific field, which method should be used?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "g_form.showInfoMessage()",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "g_form.showFieldMsg()",
+        "correct": true
+      },
+      {
+        "letter": "C",
+        "text": "g_form.addInfoMessage()",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "g_form.addFieldMsg()",
+        "correct": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "https://docs.servicenow.com/bundle/tokyo-application-development/page/script/useful- scripts/reference/r_DisplayFieldMessages.html"
+  },
+  {
+    "number": 80,
+    "question": "When creating an application through the Guided Application Creator, which of the following is a user experience option?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Portal",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "Mobile",
+        "correct": true
+      },
+      {
+        "letter": "C",
+        "text": "Self-service",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "Workspace",
+        "correct": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "https://docs.servicenow.com/bundle/tokyo-application-development/page/build/guided-app- creator/concept/guided-app-creator.html"
+  },
+  {
+    "number": 81,
+    "question": "Which one of the following is true for the Application Picker?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "All custom application scope and the Global scope appear in the Application Picker",
+        "correct": true
+      },
+      {
+        "letter": "B",
+        "text": "All applications in ServiceNow, including baseline applications like Incident, appear in the Application Picker",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "Only custom applications appear in the Application Picker",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "Only downloaded applications appear in the Application Picker",
+        "correct": false
+      }
+    ],
+    "answer": "A",
+    "explanation": "https://docs.servicenow.com/bundle/tokyo-application-\ndevelopment/page/build/applications/task/t_SelectAnAppFromTheAppPicker.html"
+  },
+  {
+    "number": 82,
+    "question": "A graphical view of relationships among tables is a <blank>.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Schema map",
+        "correct": true
+      },
+      {
+        "letter": "B",
+        "text": "Dependency view",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "Graphical User Interface",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "Map source report",
+        "correct": false
+      }
+    ],
+    "answer": "A",
+    "explanation": "\"Schema map: Provides a graphical representation of the relationships between tables.\" https://docs.servicenow.com/bundle/tokyo-platform-administration/page/administer/table-\n\nadministration/concept/c_TableAdministration.html"
+  },
+  {
+    "number": 83,
+    "question": "Which of the following steps can be used to import new data into ServiceNow from a spreadsheet?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Select Data Source, Schedule Transform",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "Load Data, Create Transform Map, Run Transform Most Voted",
+        "correct": true
+      },
+      {
+        "letter": "C",
+        "text": "Define Data Source, Select Transform Map, Run Transform",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "Select Import Set, Select Transform Map, Run Transform",
+        "correct": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "The steps to import new data into ServiceNow from a spreadsheet are: Load Data, Create Transform Map, Run Transform. Load Data is the process of uploading the spreadsheet file and creating an Import Set table that contains the data to be imported. Create Transform Map is the process of defining how the fields from the Import Set table map to the fields of the target table in ServiceNow. Run Transform is the process of executing the Transform Map and copying the data from the Import Set table to the target table."
+  },
+  {
+    "number": 84,
+    "question": "Which of the following is NOT a way to install an application on a ServiceNow instance?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Install an application from the Application Repository",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "Select the Copy button on the application record",
+        "correct": true
+      },
+      {
+        "letter": "C",
+        "text": "Download and install an application from the ServiceNow Share web site",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "Download and install a third-party application from the ServiceNow Store",
+        "correct": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "There is no \"copy\" button on the application record (at least I couldn't see one). Also, see here:\nhttps://docs.servicenow.com/bundle/sandiego-application-\n\ndevelopment/page/build/applications/reference/r_ManagingApplications.html"
+  },
+  {
+    "number": 85,
+    "question": "What are the benefits of storing the majority of an Application's server-side script logic in a Script Include?\n\na) This makes execution faster.\nb) Only run when called from a script.\nc) The script logic can be hidden when the Application is installed from the ServiceNow Store. d. For some changes to application logic there is only one place to make edits.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "a, b, and d",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "a, b, c, and d",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "b, c, and d",
+        "correct": true
+      },
+      {
+        "letter": "D",
+        "text": "a, b, and c",
+        "correct": false
+      }
+    ],
+    "answer": "C",
+    "explanation": "https://developer.servicenow.com/dev.do#!/learn/courses/tokyo/app_store_learnv2_scripting_toky o_scripting_in_servicenow/app_store_learnv2_scripting_tokyo_server_side_scripting/app_store_le arnv2_scripting_tokyo_script_includes"
+  },
+  {
+    "number": 86,
+    "question": "Identify the way(s) an application can respond to an Event generated by the gs.eventQueue() method.\n\na) Script Action b) Scheduled Script Execution (Scheduled Job)\nc) UI Policy d) Email Notification",
+    "options": [
+      {
+        "letter": "A",
+        "text": "b and c",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "c",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "a and d",
+        "correct": true
+      },
+      {
+        "letter": "D",
+        "text": "a and c",
+        "correct": false
+      }
+    ],
+    "answer": "C",
+    "explanation": "\"There are two possible ways to respond to events:\n- Email Notification\n- Script Action\" - see this quote in link below:\nhttps://developer.servicenow.com/dev.do#!/learn/learning- plans/tokyo/new_to_servicenow/app_store_learnv2_automatingapps_tokyo_responding_to_events"
+  },
+  {
+    "number": 87,
+    "question": "Which of the following is NOT a caller access field option?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Caller Tracking",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "Caller Restriction",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "None",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "Caller Permission",
+        "correct": true
+      }
+    ],
+    "answer": "D",
+    "explanation": "https://docs.servicenow.com/bundle/tokyo-application-\ndevelopment/page/build/applications/task/set-RCA-level.html"
+  },
+  {
+    "number": 88,
+    "question": "Assume a table called table exists and contains 3 fields: field1, field2, field3. Examine the Access Control list for table:\n\n\n\nWhich field or fields can a user with the itil role read?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "field3 only",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "filed1 and field3",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "All fields",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "All fields except field3",
+        "correct": true
+      }
+    ],
+    "answer": "D",
+    "explanation": "https://docs.servicenow.com/bundle/tokyo-platform-security/page/administer/contextual- security/concept/access-control-rules.html"
+  },
+  {
+    "number": 89,
+    "question": "Access Control debug information identifies whether each element of an Access Control granted or denied access. The elements appear in the debug information in the order of evaluation. In which order are the elements of an Access Control evaluated?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Conditions, Roles, Script",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "Conditions, Script, Roles",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "Roles, Conditions, Script",
+        "correct": true
+      },
+      {
+        "letter": "D",
+        "text": "Script, Conditions, Roles",
+        "correct": false
+      }
+    ],
+    "answer": "C",
+    "explanation": "\"The sequence is ROLES first, then condition, then script.\" - Chuck Tomasi says so at this link:\nhttps://www.servicenow.com/community/grc-forum/order-of-execution-of-an-acl/m- p/1311962/highlight/true#M6538"
+  },
+  {
+    "number": 91,
+    "question": "What records are used to track cross-scope applications or scripts that request access to an application, application resource, or event?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Restricted caller access records",
+        "correct": true
+      },
+      {
+        "letter": "B",
+        "text": "Caller tracking records",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "Access control level records",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "Cross-scope access records",
+        "correct": false
+      }
+    ],
+    "answer": "A",
+    "explanation": "\"Restricted caller access [sys_restricted_caller_access] records track cross-scope applications or scripts that request access to an application, application resource, or event in the Now Platform.\" <<== this is the third sentence down in the following link:\nhttps://docs.servicenow.com/bundle/tokyo-application-\ndevelopment/page/build/applications/concept/restricted-caller-access-privilege.html"
+  },
+  {
+    "number": 92,
+    "question": "How does ServiceNow match inbound email to existing records?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Watermark",
+        "correct": true
+      },
+      {
+        "letter": "B",
+        "text": "Record link",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "Subject line",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "sys_id",
+        "correct": false
+      }
+    ],
+    "answer": "A",
+    "explanation": "https://developer.servicenow.com/dev.do#!/learn/courses/tokyo/app_store_learnv2_flowdesigner_ tokyo_flow_designer/app_store_learnv2_flowdesigner_tokyo_notifications_in_flow_designer/app_s tore_learnv2_flowdesigner_tokyo_inbound_email_and_flows \"By default, the system generates a watermark label at the bottom of each notification email to allow matching incoming email to existing records.\" https://docs.servicenow.com/bundle/tokyo- servicenow-platform/page/administer/notification/concept/c_WorkingWithWatermarks.html"
+  },
+  {
+    "number": 93,
+    "question": "How can an application link to a repository behind a firewall?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "This option is not supported.",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "Link an application to source control through a MID Server.",
+        "correct": true
+      },
+      {
+        "letter": "C",
+        "text": "Link an application to source control through an access token.",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "Link an application to source control with multi-factor authentication.",
+        "correct": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "\"Use an existing MID Server to connect to a Source Control repository. Linking or importing an application through a MID Server enables access to repositories behind a firewall.\" https://docs.servicenow.com/bundle/tokyo-application-\ndevelopment/page/build/applications/concept/c_SourceControlIntegration.html"
+  },
+  {
+    "number": 94,
+    "question": "You are developing the MyApp application that has a table, Table",
+    "options": [
+      {
+        "letter": "A",
+        "text": "When the MyApp application is installed on an instance, you want Table A's records to be installed as part of the application.\nTable A's records will be installed when:",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "Table A is active and extends the Task table",
+        "correct": true
+      },
+      {
+        "letter": "C",
+        "text": "Table A's records are added to the application record using the Create Application Files context menu item",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "Table A has an automatic number counter for new records",
+        "correct": false
+      },
+      {
+        "letter": "E",
+        "text": "Table A is not included in the System Clone > Exclude Tables list",
+        "correct": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "https://docs.servicenow.com/bundle/tokyo-application-\ndevelopment/page/build/applications/task/t_IncludeApplicationData.html"
+  },
+  {
+    "number": 95,
+    "question": "Which one of the following objects CANNOT be used in a Script Action script?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "previous",
+        "correct": true
+      },
+      {
+        "letter": "B",
+        "text": "GlideRecord",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "event",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "current",
+        "correct": false
+      }
+    ],
+    "answer": "A",
+    "explanation": "https://docs.servicenow.com/bundle/tokyo-platform-administration/page/administer/platform- events/reference/r_ScriptActions.html"
+  },
+  {
+    "number": 96,
+    "question": "Which script types execute on the server? (Choose three.)",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Select an application to run",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "Select an application as a favorite in the Application Navigator",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "Choose an application to edit and set the Application Scope",
+        "correct": true
+      },
+      {
+        "letter": "D",
+        "text": "Choose an application to download and install",
+        "correct": false
+      }
+    ],
+    "answer": "C",
+    "explanation": "https://docs.servicenow.com/bundle/tokyo-application-development/page/script/server- scripting/concept/c_ServerScripting.html"
+  },
+  {
+    "number": 98,
+    "question": "Which method is used to retrieve Application Property values in a script?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "gs.getProperty()",
+        "correct": true
+      },
+      {
+        "letter": "B",
+        "text": "g_form.getAppProperty()",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "g_form.getProperty()",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "gs.getAppProperty()",
+        "correct": false
+      }
+    ],
+    "answer": "A",
+    "explanation": "https://developer.servicenow.com/dev.do#!/learn/learning- plans/tokyo/new_to_servicenow/app_store_learnv2_automatingapps_tokyo_use_application_prop erties"
+  },
+  {
+    "number": 99,
+    "question": "Which of the following statements is NOT true for the Form Designer?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "To add a section to the form layout, drag it from the Field Types tab to the desired destination on the form.",
+        "correct": true
+      },
+      {
+        "letter": "B",
+        "text": "To add a field to the form layout, drag the field from the Fields tab to the desired destination on the form.",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "To remove a field from the form layout, hover over the field to enable the Action buttons, and select the Delete (X) button.",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "To create a new field on a form's table, drag the appropriate data type from the Field Types tab to the form and then configure the new field.",
+        "correct": false
+      }
+    ],
+    "answer": "A",
+    "explanation": "https://docs.servicenow.com/bundle/tokyo-platform-administration/page/administer/form- administration/concept/c_FormDesign.html"
+  },
+  {
+    "number": 100,
+    "question": "Which one of the following is NOT an example of when an application might use a Scheduled Script Execution (Scheduled Job)?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "The application needs to send weekly email reminders to requestors for all records on a table",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "The application needs to run a clean up script on the last day of every month",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "The application needs to query the database every day to look for unassigned records",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "The application needs to run a client-side script at the same time every day",
+        "correct": true
+      }
+    ],
+    "answer": "D",
+    "explanation": "An example of when an application might not use a Scheduled Script Execution (Scheduled Job) is when the application needs to run a client-side script at the same time every day. A Scheduled Script Execution is a server-side script that runs on a specified schedule and performs some action on the server or database. A client-side script runs on the user's browser and cannot be scheduled by ServiceNow. The other options are examples of when an application might use a Scheduled Script Execution, such as sending email reminders, running a clean up script, or querying the database for unassigned records."
+  },
+  {
+    "number": 101,
+    "question": "What is the best UX format to use for lists and forms?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Forms",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "Lists",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "Standard",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "Classic",
+        "correct": true
+      }
+    ],
+    "answer": "D",
+    "explanation": "there are only two types of UX options: Mobile and Classic. Classic is defined as \"manage records via lists and form\""
+  },
+  {
+    "number": 102,
+    "question": "When creating a table in a privately-scoped application, which four Access Controls are created for the table?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Insert, Delete, Query, Write",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "Create, Delete, Read, Write",
+        "correct": true
+      },
+      {
+        "letter": "C",
+        "text": "Create, Delete, Read, Update",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "Insert, Delete, Query, Update",
+        "correct": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "When creating a table in a privately-scoped application, four Access Controls are automatically created for the table. These Access Controls define the permissions for the four basic operations on the table: Create, Delete, Read, and Write. The Create operation allows the user to create new records on the table. The Delete operation allows the user to delete existing records on the table. The Read operation allows the user to view the records on the table. The Write operation allows the user to modify the records on the table. By default, these Access Controls grant access to the admin role and the application scope. You can modify or delete these Access Controls as needed. The other options are not valid Access Controls for a table. Insert, Query, and Update are not operations, but methods of the GlideRecord class that are used to manipulate records on the server- side. They are not part of the Access Control rules."
+  },
+  {
+    "number": 103,
+    "question": "Which of the following methods is NOT part of the ServiceNow REST API?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "COPY",
+        "correct": true
+      },
+      {
+        "letter": "B",
+        "text": "POST",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "GET",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "DELETE",
+        "correct": false
+      }
+    ],
+    "answer": "A",
+    "explanation": "The ServiceNow REST API is a web service that allows you to interact with the ServiceNow platform using HTTP requests and responses. The ServiceNow REST API supports the following methods:\nPOST: This method allows you to create a new record or execute an action on the ServiceNow platform. For example, you can use the POST method to create an incident or run a script. GET: This method allows you to retrieve information from the ServiceNow platform. For example, you can use the GET method to get the details of a user or a table. DELETE: This method allows you to delete a record or a resource from the ServiceNow platform. For example, you can use the DELETE method to delete an attachment or a workflow context. PUT: This method allows you to update a record or a resource on the ServiceNow platform. For example, you can use the PUT method to update the state of a task or the value of a system property. PATCH: This method allows you to update a record or a resource on the ServiceNow platform by sending only the changes. For example, you can use the PATCH method to update the short description of an incident or the order of a module.\nThe method COPY is not part of the ServiceNow REST API. There is no COPY method in the HTTP protocol. To copy a record or a resource on the ServiceNow platform, you need to use the POST\n\nmethod with the clone action."
+  },
+  {
+    "number": 104,
+    "question": "Which ATF Test step allows you to create a user with specified roles and groups for the test?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Create a user",
+        "correct": true
+      },
+      {
+        "letter": "B",
+        "text": "Create a role",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "Create a group",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "Impersonation",
+        "correct": false
+      }
+    ],
+    "answer": "A",
+    "explanation": "The Automated Test Framework (ATF) is a tool that allows you to create and run automated tests on the ServiceNow platform. The ATF uses test steps to define the actions and validations for each test. The test step that allows you to create a user with specified roles and groups for the test is the Create a user test step. This test step creates a temporary user record that is deleted at the end of the test. You can specify the user name, password, roles, and groups for the user. You can also use the Impersonate a user test step to switch to the created user and perform actions as that user. The other options are not valid test steps for creating a user. The Create a role and Create a group test steps do not exist in the ATF. To create a role or a group, you need to use the Create a record test step and specify the sys_user_role or sys_user_group table. The Impersonation test step does not create a user, but switches to an existing user."
+  },
+  {
+    "number": 105,
+    "question": "What is a workflow context?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "It is a checked out workflow which is being edited",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "It is generated from a workflow version, executes activities, and follows transitions",
+        "correct": true
+      },
+      {
+        "letter": "C",
+        "text": "The table for which a workflow is defined plus any conditions such as \"Active is true\"",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "The business reason or process for which a workflow is designed",
+        "correct": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "A workflow is a tool that allows you to automate processes on the ServiceNow platform. A workflow consists of activities and transitions that define the logic and flow of the process. A workflow context is an instance of a workflow that is generated from a workflow version, executes activities, and follows transitions. A workflow context is associated with a specific record on a table and tracks the state and progress of the workflow. You can view and manage the workflow contexts from the Workflow Contexts module or the Workflow Contexts related list on a record. The other options are not valid definitions of a workflow context. A checked out workflow is a workflow that is being edited by a user and has not been published yet. The table and conditions for a workflow are the criteria that determine when a workflow should run on a record. The business reason or process for a workflow is the purpose and function of the workflow."
+  },
+  {
+    "number": 106,
+    "question": "Which one of the following is a benefit of creating an Application Properties page for each application you develop?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "An Application Properties page is a good landing page for an application",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "Application Properties allow a developer to override the application properties inherited from ServiceNow",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "Application users know to go to the Application Properties page to change the appearance of an application",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "Application Properties allow a developer or admin to make changes to an application's behavior without modifying application artifacts",
+        "correct": true
+      }
+    ],
+    "answer": "D",
+    "explanation": "A benefit of creating an Application Properties page for each application you develop is that Application Properties allow a developer or admin to make changes to an application's behavior without modifying application artifacts. Application Properties are system properties that store configuration information for a specific application. They can be used to control various aspects of the application, such as feature flags, default values, thresholds, or URLs. By creating an Application Properties page, you can group and display all the properties related to your application in one place and make them easy to access and update. This way, you can avoid hard-coding static data in your application code and make your application more flexible and maintainable."
+  },
+  {
+    "number": 107,
+    "question": "Which one of the following is true for this script fragment? g_user.hasRole(,x_my_app_user');",
+    "options": [
+      {
+        "letter": "A",
+        "text": "The method returns true if the currently logged in user has the x_my_app_user role or the admin role",
+        "correct": true
+      },
+      {
+        "letter": "B",
+        "text": "The method returns false only if the currently logged in user has the x_my_app_user role",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "There is no g_user.hasRole() method",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "The method returns true only if the currently logged in user has the x_my_app_user role",
+        "correct": false
+      }
+    ],
+    "answer": "A",
+    "explanation": "The statement that is true for this script fragment is that the method returns true if the currently logged in user has the x_my_app_user role or the admin role. The g_user.hasRole() method is a client-side method that checks whether the current user has a specified role or set of roles. If no role is specified, it returns true if the user has any role. If one or more roles are specified, it returns true if the user has any one of the specified roles. However, this method always returns true if the user has the admin role, regardless of the role parameter. Therefore, in this case, the method returns true if the user has either the x_my_app_user role or the admin role."
+  },
+  {
+    "number": 108,
+    "question": "Which of the following statements must evaluate to true for a user to pass an Access Control? Choose 3 answers",
+    "options": [
+      {
+        "letter": "A",
+        "text": "This option restricts the ability to delete records via web services but records can always be read",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "The user performing the query via web services must have the correct permissions to access the table's records",
+        "correct": true
+      },
+      {
+        "letter": "C",
+        "text": "Even when not selected, users with the correct permissions can use web services to access the table's records",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "This option restricts access only to SOAP web services but does not apply to REST",
+        "correct": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "The statements that must evaluate to true for a user to pass an Access Control are:\nConditions configured in the Access Control must evaluate to true. The user has one of the roles specified in the Required roles related list. Scripts configured in the Access Control must evaluate to true. An Access Control is a rule that determines whether a user can access a particular object or operation in ServiceNow. An Access Control consists of three elements: Conditions, Roles, and Script. Each element specifies a requirement that the user must meet to access the object or operation. If any of these elements return false, the Access Control denies access and stops evaluating the remaining elements. Therefore, for a user to pass an Access Control, all three elements must evaluate to true.\nThe other statements are not required for a user to pass an Access Control. Other matching Access Controls for the records do not need to evaluate to true, as only one matching Access Control needs to return true for access to be granted. The user does not need to be granted access through a business rule, as business rules are not part of Access Controls and do not affect their evaluation."
+  },
+  {
+    "number": 110,
+    "question": "Which one of the following database operations cannot be controlled with Application Access?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Update",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "Delete",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "Create",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "Query",
+        "correct": true
+      }
+    ],
+    "answer": "D",
+    "explanation": "Application Access is a feature that allows you to control the access level of other application scopes to your application's data tables. You can use Application Access to control the following database operations:\nCreate: This operation allows the user to create new records on the table. You can enable or disable this operation by selecting or clearing the Can create option.\n\nDelete: This operation allows the user to delete existing records on the table. You can enable or disable this operation by selecting or clearing the Can delete option. Read: This operation allows the user to view the records on the table. You can enable or disable this operation by selecting or clearing the Can read option. Write: This operation allows the user to modify the records on the table. You can enable or disable this operation by selecting or clearing the Can write option. The one database operation that cannot be controlled with Application Access is Query. Query is not an operation, but a method of the GlideRecord class that is used to retrieve records from the database on the server-side. Query is not part of the Application Access rules, but it is affected by the Access Controls and the user's roles."
+  },
+  {
+    "number": 111,
+    "question": "Identify characteristic(s) of a Record Producer.\nChoose 3 answers",
+    "options": [
+      {
+        "letter": "A",
+        "text": "gs.print()",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "gs.log()",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "gs.debuglog()",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "gs.info()",
+        "correct": true
+      }
+    ],
+    "answer": "D",
+    "explanation": "A Record Producer is a type of service catalog item that allows users to create records on a specified table. A Record Producer has the following characteristics:\nGraphics can be included on the user interface: You can add images, icons, or banners to the Record Producer to make it more appealing and informative for the user. You can also use HTML and CSS to customize the layout and style of the Record Producer.\nYou can script behaviors of fields in the user interface: You can use Client Scripts and UI Policies to control the behavior and appearance of the fields on the Record Producer. For example, you can use Client Scripts to validate the field inputs, perform calculations, or populate default values. You can also use UI Policies to show or hide fields, make fields mandatory or read-only, or set field values based on conditions.\nEach field prompts the user with a question rather than a field label: You can use the Variable Question field to define the question that prompts the user for the field value. The question can be more descriptive and user-friendly than the field label. For example, you can use the question \"What is the name of the project?\" instead of the field label \"Name\". The other statements are not true for Record Producers. Record Producers do not always insert records into the Requested Item [sc_req_item] table. They can insert records into any table that is specified in the Record Producer properties. Record Producers also do not have to be scripted. They can use the default script that maps the variable values to the record fields, or they can use a custom script that defines the logic for creating the record."
+  },
+  {
+    "number": 113,
+    "question": "Application developers can specify which ServiceNow page a user sees after submitting a new record using the Record Producer Ul. How is the page specified?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Write an after Business Rule script for the Record Producer's table: window.redirect = \"<URL>\";",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "Create an application property to store the URL",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "Write a script in the Record Producer's Script field: producer.redirect = \"<URL>\";",
+        "correct": true
+      },
+      {
+        "letter": "D",
+        "text": "Configure the page in the Module that opens the Record Producer Ul",
+        "correct": false
+      }
+    ],
+    "answer": "C",
+    "explanation": "Application developers can specify which ServiceNow page a user sees after submitting a new record using the Record Producer UI by writing a script in the Record Producer's Script field:\nproducer.redirect = \"<URL>\";. This script sets the redirect property of the producer object to the URL of the desired page. For example, producer.redirect = \"home.do\"; will redirect the user to the homepage after submitting the record. The other options are not valid ways to specify the redirect page for a Record Producer."
+  },
+  {
+    "number": 114,
+    "question": "Tables that extend a table do what?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Sometimes inherit the parent's fields",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "Automatically update the application scope",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "Do not inherit the parent's fields",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "Inherit the parent's fields",
+        "correct": true
+      }
+    ],
+    "answer": "D",
+    "explanation": "Tables that extend a table inherit the parent's fields. Extending a table means creating a child table that shares the same columns and business logic as the parent table. For example, the Incident table extends the Task table, which means that all fields defined on the Task table are also available on the\n\nIncident table. Extending a table allows for reusing existing fields and behaviors without duplicating them on multiple tables."
+  },
+  {
+    "number": 115,
+    "question": "Which actions can a Business Rule take without scripting?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Set field values and query the database",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "Set field values and generate an event",
+        "correct": true
+      },
+      {
+        "letter": "C",
+        "text": "Set field values and write to the system log",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "Set field values and add message",
+        "correct": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "A Business Rule can take actions such as setting field values and generating an event without scripting. A Business Rule is a server-side script that runs when a record is displayed, inserted, updated, deleted, or queried. A Business Rule can use filter conditions, role conditions, and actions to define when and how it should run. Actions are predefined operations that can be performed on a record, such as setting field values, generating an event, adding a message, or writing to the system log. These actions do not require scripting and can be selected from a drop-down list."
+  },
+  {
+    "number": 116,
+    "question": "What are Application Files in a ServiceNow application?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "An XML export of an application's table records",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "ServiceNow artifacts comprising an application",
+        "correct": true
+      },
+      {
+        "letter": "C",
+        "text": "XML exports of an application's Update Set",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "CSV files containing data imported into an application",
+        "correct": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "Application Files are ServiceNow artifacts comprising an application. An application is a group of files and data that work together to provide a service or functionality. An application file is a specific type of file that belongs to an application, such as a table, a script, a form, a business rule, a UI action, etc. Application files define the structure, logic, and interface of the application. An XML export of an application's table records, XML exports of an application's Update Set, and CSV files containing data imported into an application are not examples of application files, as they are data formats that can be used to transfer or store information related to an application, but not the application itself."
+  },
+  {
+    "number": 117,
+    "question": "What is the ServiceNow store?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "The source for ServiceNow Community created developer content",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "Marketplace for free and paid certified ServiceNow applications and integrations",
+        "correct": true
+      },
+      {
+        "letter": "C",
+        "text": "Downloadable content ServiceNow script archive",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "Alternate name for the ServiceNow Developer Share site",
+        "correct": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "The ServiceNow Store is a marketplace for free and paid certified ServiceNow applications and integrations. The ServiceNow Store provides customers with access to Now Certified enterprise workflow apps from partners that complement and extend ServiceNow products and solutions. Customers can browse, try, buy, and deploy apps and integrations that suit their needs and enhance their ServiceNow experience. The ServiceNow Store is not the source for ServiceNow Community created developer content, as that is available on the Developer Portal or the Share site. The ServiceNow Store is not a downloadable content ServiceNow script archive, as that is available on the Script Library or the Script Repository. The ServiceNow Store is not an alternate name for the ServiceNow Developer Share site, as that is a separate site where developers can share applications, code snippets, UI pages, etc."
+  },
+  {
+    "number": 118,
+    "question": "Which one of the following is NOT true for Modules?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Access to Modules is controlled with roles",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "Modules open content pages",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "Every Module must be associated with a table",
+        "correct": true
+      },
+      {
+        "letter": "D",
+        "text": "Every Module must be part of an Application Menu",
+        "correct": false
+      }
+    ],
+    "answer": "C",
+    "explanation": "The statement that is not true for Modules is that every Module must be associated with a table. A Module is the functionality within an Application Menu that opens a content page in the content frame or a separate tab or window. A Module can be associated with a table, a list, a form, a report, a script, or any other type of page. For example, the Open Module under the Incident Application Menu opens a list of incident records from the Incident table, while the Overview Module under the Performance Analytics Application Menu opens a dashboard page with various charts and widgets. The other statements are true for Modules. Access to Modules is controlled with roles, as each Module can have one or more roles specified in its definition that determine who can see and access it. Modules open content pages, as they are links to different types of pages that provide information and functionality to users. Every Module must be part of an Application Menu, as they are the second-level navigation options for Applications."
+  },
+  {
+    "number": 119,
+    "question": "a) To replace outdated, inadequate, custom business applications and processes\nb) To extend service delivery and management to all enterprise departments\nc) To allow users full access to all ServiceNow tables, records, and fields\nd) To extend the value of ServiceNow",
+    "options": [
+      {
+        "letter": "A",
+        "text": "a, b, and c",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "a, b, c, and d",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "b, c, and d",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "a, b, and d",
+        "correct": true
+      }
+    ],
+    "answer": "D",
+    "explanation": "The correct combination of statements is a, b, and d. These are possible reasons to build custom applications on ServiceNow:\nTo replace outdated, inadequate, custom business applications and processes. Building custom applications on ServiceNow can help digitize and automate manual or legacy processes that are not covered by existing ServiceNow solutions. This can improve efficiency, data quality, user experience, and innovation.\nTo extend service delivery and management to all enterprise departments. Building custom applications on ServiceNow can help provide consistent and scalable services across different functions and teams in the organization. This can enhance collaboration, visibility, productivity, and customer satisfaction.\nTo extend the value of ServiceNow. Building custom applications on ServiceNow can help leverage the capabilities and benefits of the Now Platform&#174;, such as low-code development tools, workflow automation engine, AI-powered insights, security operations, etc. This can increase agility, resilience, performance, and value.\nThe statement c is not a valid reason to build custom applications on ServiceNow:\nTo allow users full access to all ServiceNow tables, records, and fields. Building custom applications on ServiceNow does not imply granting users full access to all data and objects in ServiceNow. Access control rules still apply to custom applications and their components to ensure security and compliance."
+  },
+  {
+    "number": 120,
+    "question": "Why create Applications in ServiceNow?\nA) To replace outdated inadequate custom business applications and processes\n\nB) To extend service delivery and management to all enterprise departments C) To allow users full access to all ServiceNow tables, records and fields D) To extend the value of ServiceNow",
+    "options": [
+      {
+        "letter": "A",
+        "text": "a b and c",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "a b c and d",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "b c and d",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "a b and d",
+        "correct": true
+      }
+    ],
+    "answer": "D",
+    "explanation": "Creating applications in ServiceNow can help businesses replace outdated, inadequate, custom business applications and processes, extend service delivery and management to all enterprise departments, and extend the value of ServiceNow by leveraging its platform capabilities and integrations1234.\nReference = 1: What are Application Services? - ServiceNow 2: What is Application Development? - ServiceNow 3: Custom Applications in ServiceNow - The Cloud People 4: Build Custom Apps in ServiceNow &#173; eBook &#173; ServiceNow"
+  },
+  {
+    "number": 121,
+    "question": "Which determines the relationships between field in an Import Set table to field in an existing ServiceNow table?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Data Sources",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "Schema Map Relationship Builder",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "Business Service Management Map",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "Transform Map",
+        "correct": true
+      }
+    ],
+    "answer": "D",
+    "explanation": "A transform map determines the relationships between fields in an import set table and fields in an existing ServiceNow table. It also specifies how to transform the imported data before mapping it to the target table."
+  },
+  {
+    "number": 122,
+    "question": "What are web services?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "They provide a customer-facing view of available service and product offerings provided by departments within the organization",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "Methods used to allow applications to connect to other software applications over a network",
+        "correct": true
+      },
+      {
+        "letter": "C",
+        "text": "Methods used to create and maintain Ul Pages",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "Methods used to discover a wide variety of systems and applications",
+        "correct": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "Web services are software systems that use standardized protocols and formats, such as XML and HTTP, to exchange data and messages between different applications or systems over the Internet or other networks12. Web services enable interoperability and integration among diverse software components, regardless of their programming languages, platforms, or architectures34. Reference = 1: What are Web Services? - GeeksforGeeks 2: Web service - Wikipedia 3: What are Web\n\nServices? - Online Tutorials Library 4: What is a Web Service? | Webopedia"
+  },
+  {
+    "number": 123,
+    "question": "What data types of Flow Designer variables are supported to store record data and complex data? Choose 3 answers",
+    "options": [
+      {
+        "letter": "A",
+        "text": "field1, field2. andfield3",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "field3 only",
+        "correct": true
+      },
+      {
+        "letter": "C",
+        "text": "field 1 andfield3",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "All fields except field3",
+        "correct": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "Flow Designer variables can store record data and complex data using the following data types:\nInteger: A whole number that can be used in mathematical operations. Array: A collection of items that can be accessed by their index or iterated over using a For each action.\nString: Any kind of text, such as email addresses or the text contents of a file."
+  },
+  {
+    "number": 126,
+    "question": "What is required to link a ServiceNow application to a Git repository? Choose 3 answers",
+    "options": [
+      {
+        "letter": "A",
+        "text": "current.variable_name",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "S{variable_name}",
+        "correct": true
+      },
+      {
+        "letter": "C",
+        "text": "< variable_name >",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "< variable_name >.do?WSDL",
+        "correct": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "To link a ServiceNow application to a Git repository, you need to provide the user name, URL, and password of the Git account that hosts the repository12. The URL is the address of the Git repository that you want to link to the application. The user name and password are the credentials that you use to access the Git account. Alternatively, you can use a personal access token instead of a password for increased security3.\nReference = 1: Link an application to source control - ServiceNow Docs 2: Publish an application to the application repository - ServiceNow 3: Linking an application to Git using a personal access token instead of a password - ServiceNow"
+  },
+  {
+    "number": 128,
+    "question": "What Module Link type is used to access an Application Properties page?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "URL (from Arguments)",
+        "correct": true
+      },
+      {
+        "letter": "B",
+        "text": "HTML (from Arguments)",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "Script (from Arguments)",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "Single Record",
+        "correct": false
+      }
+    ],
+    "answer": "A",
+    "explanation": "A Module Link type defines how the module opens in the content pane when the user clicks on it in the navigation pane1. The URL (from Arguments) link type allows you to specify a URL that opens the Application Properties page for the selected application2. The URL can include arguments that are evaluated at runtime, such as the application name or scope3.\n\nReference = 1: Module link types - ServiceNow Docs 2: Application properties - ServiceNow Docs 3:\nURL (from Arguments) - ServiceNow Docs"
+  },
+  {
+    "number": 129,
+    "question": "Is it possible to change an application's scope?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Yes, but only from global scope to private scope",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "Yes it's possible.",
+        "correct": true
+      },
+      {
+        "letter": "C",
+        "text": "No, it's not possible.",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "Yes. but only from private scope to global scope",
+        "correct": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "It is possible to change an application's scope in ServiceNow, either from global to private or from private to global. However, changing the scope of an application may affect its functionality and compatibility with other applications. Therefore, it is recommended to test the application thoroughly before and after changing its scope."
+  },
+  {
+    "number": 130,
+    "question": "When creating application tables, a user role is automatically added to the table record. \nWhich other role does an application typically have?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Application Manager",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "Application Fulfiller",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "Application Super User",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "Application Admin",
+        "correct": true
+      }
+    ],
+    "answer": "D",
+    "explanation": "An application admin is a role that grants full access to an application and its tables, scripts, and other components1. An application admin can create, modify, and delete any element of the application, as well as publish and install it2. An application typically has an application admin role that is automatically created and assigned to the application creator3. Reference = 1: Application administration - ServiceNow Docs 2: Application admin role - ServiceNow Docs 3: Application roles - ServiceNow Docs"
+  },
+  {
+    "number": 131,
+    "question": "When debugging Email Notifications, what must you check on a user record? Choose 2 answers",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Bundle",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "Row",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "Action",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "Spoke",
+        "correct": true
+      }
+    ],
+    "answer": "D",
+    "explanation": "To receive email notifications, a user must have an active account and a valid email address in the user record. If either of these conditions is not met, the user will not be able to receive any email notifications from the system."
+  },
+  {
+    "number": 134,
+    "question": "What is the Event Registry?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "A table containing a record for every Event known to the ServiceNow system which allows ServiceNow to react when Events are generated",
+        "correct": true
+      },
+      {
+        "letter": "B",
+        "text": "A Workflow which is launched every time an Event is generated; used to debug Events",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "The method used in server side scripts to generate Events and pass parameters",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "The Event Log which lists all Events that have been generated",
+        "correct": false
+      }
+    ],
+    "answer": "A",
+    "explanation": "The Event Registry is a table that stores the definitions of all the Events that can be triggered or processed by the ServiceNow system1. The Event Registry allows ServiceNow to react when Events are generated by executing actions such as sending notifications, running scripts, or starting workflows2. The Event Registry also provides information about the Event parameters, description, and source3.\nReference = 1: Event Registry - ServiceNow Docs 2: Event Management - ServiceNow Docs 3: Event\n\nRegistry form - ServiceNow Docs"
+  },
+  {
+    "number": 136,
+    "question": "Which server-side object provides methods for working with dates when writing a script in a privately scoped application?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "GlideDate Time",
+        "correct": true
+      },
+      {
+        "letter": "B",
+        "text": "current",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "GlideRecord",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "GlideSystem",
+        "correct": false
+      }
+    ],
+    "answer": "A",
+    "explanation": "https://developer.servicenow.com/dev.do#!/reference/api/paris/server_legacy/c_GlideSystemAPI#r _GS-nowNoTZ"
+  },
+  {
+    "number": 137,
+    "question": "Which are reasons an application could be developed on the ServiceNow platform? Choose 3 answers",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Access Controls",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "Application Rules",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "Client Scripts",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "Roles",
+        "correct": true
+      }
+    ],
+    "answer": "D",
+    "explanation": "The ServiceNow platform is designed to create applications that use forms, workflow, and reporting to solve business problems. Forms are used to interact with data stored in tables, workflow is used to automate and orchestrate processes, and reporting is used to visualize and analyze dat a. The platform does not require low-level programming libraries or multimedia features, as it provides standard tools and technologies for application development. Reference = ServiceNow Certified Application Developer Exam Specification, Application Development Platform &#173; ServiceNow"
+  },
+  {
+    "number": 139,
+    "question": "What is the ServiceNow App Repository?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "A Request table",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "Another name for update sets",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "A database containing ServiceNow apps",
+        "correct": true
+      },
+      {
+        "letter": "D",
+        "text": "A collection of files in a Git database",
+        "correct": false
+      }
+    ],
+    "answer": "C",
+    "explanation": "The ServiceNow App Repository is a central repository for all scoped applications that are published by all ServiceNow customers. It enables ServiceNow customers to upload and distribute applications between their instances. It also provides entitlements and version control for the applications."
+  },
+  {
+    "number": 140,
+    "question": "Which of the following statements is true for the Form Designer?\n\na) To add a field to the form layout, drag the field from the Fields tab to the desired destination on the form.\nb) To create a new field on a form's table, drag the appropriate data type from the Field Types tab to the form and then configure the new field.\nc) To remove a field from the form layout, hover over the field to enable the Action buttons, and select the Delete (X) button.\nd) To add a section to the form layout, drag it from the Field Types tab to the desired destination on the form.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "a, b, c, and d",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "b, c, and d",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "a, b, and d",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "a, b, and c",
+        "correct": true
+      }
+    ],
+    "answer": "D",
+    "explanation": "https://docs.servicenow.com/bundle/tokyo-platform-administration/page/administer/form- administration/concept/c_FormDesign.html\n\nThe Form Designer is a graphical interface for creating and customizing forms. The following statements are true for the Form Designer:\nTo add a field to the form layout, drag the field from the Fields tab to the desired destination on the form. This will add the field to the form view without changing the table definition. To create a new field on a form's table, drag the appropriate data type from the Field Types tab to the form and then configure the new field. This will create a new column on the table and add the field to the form view.\n\nTo remove a field from the form layout, hover over the field to enable the Action buttons, and select the Delete (X) button. This will remove the field from the form view but not from the table definition. The following statement is false for the Form Designer:\nTo add a section to the form layout, drag it from the Field Types tab to the desired destination on the form. This is incorrect because sections are not available in the Field Types tab. To add a section, click the Add Section button on the toolbar or right-click on the form and select Add Section."
+  },
+  {
+    "number": 141,
+    "question": "Which of the following are configured in an Email Notification?\n\na) Who will receive the notification.\nb) What content will be in the notification.\nc) When to send the notification.\nd) How to send the notification.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "a, b and c",
+        "correct": true
+      },
+      {
+        "letter": "B",
+        "text": "a, b, and d",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "b, c and d",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "a, c and d",
+        "correct": false
+      }
+    ],
+    "answer": "A",
+    "explanation": "https://docs.servicenow.com/bundle/tokyo-servicenow-\nplatform/page/administer/notification/task/t_CreateANotification.html"
+  },
+  {
+    "number": 142,
+    "question": "To see what scripts, reports, and other application artifacts will be in a published application:",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Enter the name of the Application in the Global search field",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "Open the list of Update Sets for the instance",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "Examine the Application Files Related List in the application to be published",
+        "correct": true
+      },
+      {
+        "letter": "D",
+        "text": "Open the artifact records individually to verify the value in the Application field",
+        "correct": false
+      }
+    ],
+    "answer": "C",
+    "explanation": "To see what scripts, reports, and other application artifacts will be in a published application, the best option is to examine the Application Files Related List in the application to be published. This will show all the application files that belong to the application, grouped by file type and scope. You can also filter, sort, or search the list to find specific files. The following options are not the best ways to see what application artifacts will be in a published application:\nEnter the name of the Application in the Global search field. This will perform a global text search on the instance and return any records that match the application name, which may include irrelevant or incomplete results.\nOpen the list of Update Sets for the instance. This will show all the update sets that have been created or imported on the instance, but not necessarily the ones that belong to the application to be published. Update sets are used to move customizations between instances, not to publish applications to the ServiceNow Store or Share.\nOpen the artifact records individually to verify the value in the Application field. This will require opening each record that may be part of the application and checking the Application field, which is tedious and error-prone."
+  },
+  {
+    "number": 143,
+    "question": "Which one of the following is NOT a debugging strategy for client-side scripts?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "g_form.addInfoMessage()",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "Field Watcher",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "jslog()",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "gs.log()",
+        "correct": true
+      }
+    ],
+    "answer": "D",
+    "explanation": "https://developer.servicenow.com/dev.do#!/learn/learning- plans/rome/new_to_servicenow/app_store_learnv2_scripting_rome_debugging_client_scripts The following are debugging strategies for client-side scripts, which run in the web browser and manipulate the user interface:\ng_form.addInfoMessage(). This is a client-side API that displays an information message at the top of the form.\nField Watcher. This is a debugging tool that displays the current and previous values of one or more fields on a form.\njslog(). This is a client-side API that writes a message to the browser console.\n\nThe following is not a debugging strategy for client-side scripts, but for server-side scripts, which run on the ServiceNow platform and manipulate the database:\ngs.log(). This is a server-side API that writes a message to the system log."
+  },
+  {
+    "number": 144,
+    "question": "Which Application Access configuration field(s) are NOT available if the Can read configuration field is NOT selected?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "All access to this table via web services",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "Can create, Can update, and Can delete",
+        "correct": true
+      },
+      {
+        "letter": "C",
+        "text": "Can read does not affect the availability of other Application Access fields",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "Allow configuration",
+        "correct": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "\"You must first select read access to grant any other API record operation.\" https://docs.servicenow.com/bundle/tokyo-application-\ndevelopment/page/build/applications/reference/r_TableApplicationAccessFields.html The Application Access configuration fields control the access level for an application and its tables. The following Application Access configuration fields are not available if the Can read configuration field is not selected:\nCan create. This field determines whether users can create records on the application tables. Can update. This field determines whether users can update records on the application tables. Can delete. This field determines whether users can delete records on the application tables. These fields are not available because they depend on the Can read field, which determines whether users can view records on the application tables. If users cannot read records, they cannot create, update, or delete them either.\nThe following Application Access configuration fields are available regardless of the Can read configuration field:\nAll access to this table via web services. This field determines whether users can access the application tables using web services, such as REST or SOAP. Allow configuration. This field determines whether users can configure the application tables, such as adding or modifying fields, views, or indexes."
+  },
+  {
+    "number": 145,
+    "question": "Which of the following is NOT a trigger type in Flow Designer?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Outbound Email",
+        "correct": true
+      },
+      {
+        "letter": "B",
+        "text": "Application",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "Record",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "Schedule",
+        "correct": false
+      }
+    ],
+    "answer": "A",
+    "explanation": "See list of triggers on right hand side of this webpage: https://docs.servicenow.com/en- US/bundle/tokyo-application-development/page/administer/flow-designer/reference/flow- triggers.html\nThe trigger types in Flow Designer are Application, Record, Schedule, and Topic. Outbound Email is not a trigger type, but an action type that can be used in a flow to send an email message1."
+  },
+  {
+    "number": 146,
+    "question": "When creating new application files in a scoped application, cross scope access is turned on by default in which of the following?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "REST messages",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "Table",
+        "correct": true
+      },
+      {
+        "letter": "C",
+        "text": "Script Include",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "Workflow",
+        "correct": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "\"By default, all application scope scripts can read the table's records but cannot perform any other database operations.\" https://developer.servicenow.com/dev.do#!/learn/learning- plans/tokyo/servicenow_administrator/app_store_learnv2_securingapps_tokyo_application_access _database_settings"
+  },
+  {
+    "number": 147,
+    "question": "In an Email Notification, which one of the following is NOT true for the Weight field?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Only Notifications with the highest weight for the same record and recipients are sent",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "A Weight value of zero means that no email should be sent",
+        "correct": true
+      },
+      {
+        "letter": "C",
+        "text": "The Weight value defaults to zero",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "A Weight value of zero means the Notification is always sent when the Notification's When to send criteria is met",
+        "correct": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "https://docs.servicenow.com/bundle/tokyo-servicenow-\nplatform/page/administer/notification/task/t_CreateANotification.html https://developer.servicenow.com/dev.do#!/learn/learning- plans/quebec/new_to_servicenow/app_store_learnv2_automatingapps_quebec_when_to_send\n\nThe Weight field in an Email Notification determines which notification is sent when multiple notifications are triggered for the same record and recipients. Only the notification with the highest weight is sent. A weight value of zero means the notification is always sent when the notification's When to send criteria is met. A weight value of -1 means that no email should be sent3."
+  },
+  {
+    "number": 148,
+    "question": "Which of the following objects does a Display Business Rule NOT have access to?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "previous",
+        "correct": true
+      },
+      {
+        "letter": "B",
+        "text": "GlideSystem",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "g_scratchpad",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "current",
+        "correct": false
+      }
+    ],
+    "answer": "A",
+    "explanation": "A Display Business Rule has access to the current, g_scratchpad, and GlideSystem objects, but not the previous object. The previous object is only available to Before Business Rules4."
+  },
+  {
+    "number": 149,
+    "question": "Which of the following features are available to Global applications? (Choose two.)",
+    "options": [
+      {
+        "letter": "A",
+        "text": "List choice",
+        "correct": true
+      },
+      {
+        "letter": "B",
+        "text": "Form button",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "List banner button",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "Form choice",
+        "correct": false
+      }
+    ],
+    "answer": "A",
+    "explanation": "Global applications can use Automated Test Framework and Flow Designer features, but not Source Control and Delegated Development features. Source Control and Delegated Development features are only available to scoped applications ."
+  },
+  {
+    "number": 151,
+    "question": "Which of the following is NOT supported by Flow Designer?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Call a subflow from a flow",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "Test a flow with rollback",
+        "correct": true
+      },
+      {
+        "letter": "C",
+        "text": "Use Delegated Developer",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "Run a flow from a MetricBase Trigger",
+        "correct": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "Flow Designer is a graphical tool that allows users to automate processes in ServiceNow without coding. The following are supported by Flow Designer:\nCall a subflow from a flow. This is a feature that allows users to invoke a subflow, which is a reusable unit of logic, from a flow. This can help simplify complex flows and avoid duplication of logic. Use Delegated Developer. This is a feature that allows administrators to delegate the development and maintenance of flows and actions to users who are not administrators. This can help distribute the workload and empower non-admin users to create automations. Run a flow from a MetricBase Trigger. This is a feature that allows users to trigger a flow based on a MetricBase query, which is a way of analyzing time-series data in ServiceNow. This can help automate actions based on data trends and patterns.\nThe following is not supported by Flow Designer:\nTest a flow with rollback. This is not a feature of Flow Designer, but of Automated Test Framework\n\n(ATF), which is a tool that allows users to create and run automated tests on ServiceNow applications and features. ATF supports testing flows with rollback, which means reverting any changes made by the flow during the test execution."
+  },
+  {
+    "number": 152,
+    "question": "Which of the following are true for reports in ServiceNow? (Choose three.)",
+    "options": [
+      {
+        "letter": "A",
+        "text": "List of Records, Separator, Catalog Type, Roles",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "Assessment, List of Records, Separator, Timeline Page",
+        "correct": true
+      },
+      {
+        "letter": "C",
+        "text": "List of Records, Content Page, Order, URL (from arguments:)",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "Assessment, List of Records, Content Page, Roles",
+        "correct": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "https://docs.servicenow.com/bundle/rome-platform-administration/page/administer/reference- pages/task/schedule-report.html Generate and distribute scheduled reports via email. A report is a graphical representation of data from one or more tables in ServiceNow. The following are true for reports in ServiceNow:\nCan be a graphical representation of data. This is true because reports can use various chart types, such as pie, bar, line, or gauge, to visualize data in a meaningful way. Can be run on demand by authorized users. This is true because reports can be accessed from the Reports menu or the Report Navigator and run by users who have the appropriate roles and permissions to view the data.\nCan be scheduled to be run and distributed by email. This is true because reports can be configured to run at a specific time and frequency and send the results to one or more email recipients.\nThe following are not true for reports in ServiceNow:\nAny user can see any report shared with them. This is false because users can only see reports that are shared with them if they also have access to the data source of the report. For example, a user who does not have the itil role cannot see a report based on the incident table, even if the report is shared with them.\n\nAll users can generate reports on any table. This is false because users can only generate reports on tables that they have access to and that are enabled for reporting. For example, a user who does not have the admin role cannot generate reports on the sys_user table, which is the table for user records."
+  },
+  {
+    "number": 154,
+    "question": "Which one of the following is true for a table with the \"Allow configuration\" Application Access option selected?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Only the in scope application's scripts can create Business Rules for the table",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "Any user with the application's user role can modify the application's scripts",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "Out of scope applications can create Business Rules for the table",
+        "correct": true
+      },
+      {
+        "letter": "D",
+        "text": "Out of scope applications can add new tables to the scoped application",
+        "correct": false
+      }
+    ],
+    "answer": "C",
+    "explanation": "The Allow configuration Application Access option determines whether users can configure the application tables, such as adding or modifying fields, views, or indexes. The following is true for a table with the Allow configuration option selected:\nOut of scope applications can create Business Rules for the table. This is true because the Allow configuration option grants access to the table configuration to any user who has the admin or personalize_dictionary role, regardless of the application scope. This means that users can create Business Rules, which are server-side scripts that run when a record is displayed, inserted, updated, or deleted, for the table from any application.\nThe following are not true for a table with the Allow configuration option selected:\nOnly the in scope application's scripts can create Business Rules for the table. This is false because the Allow configuration option does not restrict the creation of Business Rules to the in scope application, as explained above.\nAny user with the application's user role can modify the application's scripts. This is false because the Allow configuration option does not grant access to the application scripts, such as client scripts or script includes, to any user who has the application's user role. To modify the application scripts, users need to have the admin role or the application's admin role. Out of scope applications can add new tables to the scoped application. This is false because the Allow configuration option does not allow out of scope applications to add new tables to the scoped application. To add new tables to a scoped application, users need to have the admin role or the application's admin role and be in the application scope."
+  },
+  {
+    "number": 155,
+    "question": "When working in the Form Designer, configuring the label of a field in a child table changes the label on which table(s)?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "base table",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "child table",
+        "correct": true
+      },
+      {
+        "letter": "C",
+        "text": "parent table",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "all tables",
+        "correct": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "Configuring the label of a field in a child table changes the label only on that table, not on the base table or the parent table. The base table is the table that contains the common fields for all the extended tables, and the parent table is the table that is directly extended by the child table. The label of a field on the base table or the parent table can be different from the label on the child table."
+  },
+  {
+    "number": 156,
+    "question": "Which one of the following is true?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "A UI Policy's Actions execute before the UI Policy's Scripts",
+        "correct": true
+      },
+      {
+        "letter": "B",
+        "text": "The execution order for a UI Policy's Scripts and Actions is determined at runtime",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "A UI Policy's Scripts execute before the UI Policy's Actions",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "A UI Policy's Actions and Scripts execute at the same time",
+        "correct": false
+      }
+    ],
+    "answer": "A",
+    "explanation": "Created UI policy on incident form, action set's cmdb_ci field as mandatory and script as not. result, field was not mandatory.\n\nA UI Policy's Actions execute before the UI Policy's Scripts. Actions are predefined operations that can be applied to fields or sections, such as making them mandatory, read-only, visible, or setting a default value. Scripts are custom JavaScript code that can be used to perform more complex logic or validations. Actions are executed first, and then Scripts are executed if the UI Policy conditions are met."
+  },
+  {
+    "number": 157,
+    "question": "Here is the Business Rule script template:\n\n\n\nThis type of JavaScript function is known as:",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Constructor",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "Scoped",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "Anonymous",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "Self-invoking",
+        "correct": true
+      }
+    ],
+    "answer": "D",
+    "explanation": "Self-invoking. Learn JavaScript!\n\nThis type of JavaScript function is known as self-invoking or immediately-invoked function expression (IIFE). It is a function that is defined and executed at the same time, without being assigned to a variable or being called by another function. It is often used to create a local scope for variables and avoid polluting the global namespace."
+  },
+  {
+    "number": 158,
+    "question": "Which method call returns true only if the currently logged in user has the catalog_admin role and in no other case?",
+    "options": [
+      {
+        "letter": "A",
+        "text": "g_user.hasRole(`catalog_admin')",
+        "correct": false
+      },
+      {
+        "letter": "B",
+        "text": "g_user.hasRoleExactly(`catalog_admin')",
+        "correct": true
+      },
+      {
+        "letter": "C",
+        "text": "g_user.hasRoleOnly(`catalog_admin')",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "g_user.hasRoleFromList(`catalog_admin')",
+        "correct": false
+      }
+    ],
+    "answer": "B",
+    "explanation": "The method call that returns true only if the currently logged in user has the catalog_admin role and in no other case is g_user.hasRoleExactly(`catalog_admin'). This method checks if the user has exactly one role, and returns true if it matches the argument. The other methods return true if the user has one or more roles, or if the user has any role from a list of arguments."
+  },
+  {
+    "number": 159,
+    "question": "There is a basic strategy when creating a Utils Script Include. Identify the step that does not belong.",
+    "options": [
+      {
+        "letter": "A",
+        "text": "Identify the table",
+        "correct": true
+      },
+      {
+        "letter": "B",
+        "text": "Script the function(s)",
+        "correct": false
+      },
+      {
+        "letter": "C",
+        "text": "Create a class",
+        "correct": false
+      },
+      {
+        "letter": "D",
+        "text": "Create a prototype object from the new class",
+        "correct": false
+      }
+    ],
+    "answer": "A",
+    "explanation": "The step that does not belong when creating a Utils Script Include is identifying the table. A Script Include is a server-side script that can contain one or more classes or functions that can be reused by other scripts. It does not depend on a specific table, but can access any table through GlideRecord or other APIs. The other steps are part of creating a Script Include class and its prototype object."
+  }
+]

@@ -1,0 +1,135 @@
+[
+    {
+        "id": "1",
+        "question": "What are the ways to designate data tables when Guided Application Creator (GAC)?\nChoose 3 answers",
+        "options": [
+            {
+                "label": "A",
+                "text": "Upload an existing PDF"
+            },
+            {
+                "label": "B",
+                "text": "Create a new table on the platform"
+            },
+            {
+                "label": "C",
+                "text": "Use an existing table on the platform"
+            },
+            {
+                "label": "D",
+                "text": "Upload an existing spreadsheet"
+            },
+            {
+                "label": "E",
+                "text": "Upload an existing word processing document."
+            },
+            {
+                "label": "F",
+                "text": "Use a freeform database"
+            }
+        ],
+        "answer": "A,B,D",
+        "explanation": "The Guided Application Creator (GAC) is a tool that helps you create applications on the ServiceNow platform by guiding you through the steps of defining the data model, user interface, and logic. When using the GAC, you can designate data tables in three ways:* Upload an existing PDF: You can upload a PDF file that contains the table schema and sample data.The GAC will parse the PDF and create the table and fields based on the file content.* Create a new table on the platform: You can create a new table on the platform by specifying the table name, label, and description. You can also add fields, indexes, and relationships to the table using the GAC.* Upload an existing spreadsheet: You can upload a spreadsheet file that contains the table schema and sample data. The GAC will parse the spreadsheet and create the table and fields based on the file content.The other options are not valid ways to designate data tables when using the GAC. You cannot upload an existing word processing document or use a freeform database. You can use an existing table on the platform, but you cannot designate it as a data table. You can only use it as a reference table for lookup fields.References:Guided Application CreatorCreate a table from a PDF or spreadsheetCreate a table from scratch",
+        "source": "Actual4Test"
+    },
+    {
+        "id": "2",
+        "question": "How does ServiceNow match inbound email to an existing record? (Choose 2 answers)",
+        "options": [
+            {
+                "label": "A",
+                "text": "Sys_id"
+            },
+            {
+                "label": "B",
+                "text": "Record link"
+            },
+            {
+                "label": "C",
+                "text": "Watermark"
+            },
+            {
+                "label": "D",
+                "text": "Subject line with record number"
+            }
+        ],
+        "answer": "C,D",
+        "explanation": "Inbound email matching uses Watermarks and Subject lines (with record numbers like INC0010001) to associate emails with existing records.From Email Handling Docs:\"ServiceNow uses Watermark IDs and subject lines containing record numbers to find the corresponding task or record when processing inbound email.\"",
+        "source": "Actual4Test"
+    },
+    {
+        "id": "3",
+        "question": "On a Business Rule, the When setting determines at what point the rule executes. What are the options for specifying that timing?",
+        "options": [
+            {
+                "label": "A",
+                "text": "Insert, Update, Delete, Query"
+            },
+            {
+                "label": "B",
+                "text": "Before, After Async, Display"
+            },
+            {
+                "label": "C",
+                "text": "Prior to, Synchronous on Update"
+            },
+            {
+                "label": "D",
+                "text": "Before, Synchronous, Scheduled Job, View"
+            }
+        ],
+        "answer": "B",
+        "explanation": "",
+        "source": "Actual4Test"
+    },
+    {
+        "id": "4",
+        "question": "When writing a Client Script to provide feedback targeted at a specific field, which method should be used?",
+        "options": [
+            {
+                "label": "A",
+                "text": "g_form.showInfoMessage()"
+            },
+            {
+                "label": "B",
+                "text": "g_form.showFieldMsg()"
+            },
+            {
+                "label": "C",
+                "text": "g_form.addInfoMessage()"
+            },
+            {
+                "label": "D",
+                "text": "g_form.addFieldMsg()"
+            }
+        ],
+        "answer": "B",
+        "explanation": "https://docs.servicenow.com/bundle/tokyo-application-development/page/script/useful-scripts/reference/r_DisplayFieldMessages.html",
+        "source": "Actual4Test"
+    },
+    {
+        "id": "5",
+        "question": "What is the GlideForm Client-side scripting object?",
+        "options": [
+            {
+                "label": "A",
+                "text": "gs.form"
+            },
+            {
+                "label": "B",
+                "text": "sn.form"
+            },
+            {
+                "label": "C",
+                "text": "g_form"
+            },
+            {
+                "label": "D",
+                "text": "gs_form"
+            }
+        ],
+        "answer": "C",
+        "explanation": "",
+        "source": "Actual4Test"
+    }
+]

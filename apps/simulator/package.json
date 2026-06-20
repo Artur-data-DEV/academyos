@@ -1,0 +1,51 @@
+{
+  "name": "simulados-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3001",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "build:questions:clean": "node scripts/rebuild-clean-dataset.mjs --source CSA_EXAMTOPICS.json --output CSA_EXAMTOPICS_READY.json",
+    "convert:answers-detail": "node scripts/convert-answers-detail-to-questions.mjs",
+    "convert:answers-detail:clipboard": "node scripts/convert-answers-detail-to-questions.mjs --from-clipboard --output CSA_EXAMTOPICS_FROM_ANSWERS_DETAIL.json",
+    "convert:answers-detail:clipboard:merge": "node scripts/convert-answers-detail-to-questions.mjs --from-clipboard --output CSA_EXAMTOPICS_FROM_ANSWERS_DETAIL.json --merge-base CSA_EXAMTOPICS_READY.json --merge-output CSA_EXAMTOPICS_READY_MERGED.json",
+    "import:questions": "node scripts/import-questions.mjs",
+    "import:questions:ready": "node scripts/import-questions.mjs --source CSA_EXAMTOPICS_READY.json",
+    "import:questions:dump": "node scripts/import-questions.mjs --source CSA_EXAMTOPICS_FROM_DUMP.json",
+    "audit:questions": "node scripts/audit-questions.mjs",
+    "build:dump": "python scripts/build_dataset_from_dump.py --dump-dir \"data/raw-examtopics/01 - ExamTopics/01 - Respostas\" --existing-json \"CSA_EXAMTOPICS.json\" --output \"CSA_EXAMTOPICS_FROM_DUMP.json\" --cache-dir \"data/ocr-cache\" --scale 1.4"
+  },
+  "dependencies": {
+    "@academyos/database": "workspace:*",
+    "@academyos/store": "workspace:*",
+    "@academyos/ui": "workspace:*",
+    "@ai-sdk/openai": "^3.0.73",
+    "@ai-sdk/react": "^3.0.210",
+    "@supabase/ssr": "^0.10.2",
+    "@supabase/supabase-js": "^2.103.3",
+    "@tailwindcss/typography": "^0.5.19",
+    "ai": "^6.0.208",
+    "axios": "^1.16.1",
+    "cheerio": "^1.2.0",
+    "lucide-react": "^1.21.0",
+    "next": "16.2.4",
+    "pdf-parse": "^2.4.5",
+    "playwright": "^1.60.0",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "react-icons": "^5.6.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.4",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}
