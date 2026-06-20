@@ -1,6 +1,5 @@
 import Link from "next/link";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
+import { MarkdownText } from "@academyos/ui/markdown";
 import { ArrowLeft, CheckCircle2, ExternalLink } from "lucide-react";
 
 import { Button } from "@academyos/ui/button";
@@ -19,17 +18,7 @@ type Props = {
   }>;
 };
 
-export async function generateStaticParams() {
-  const track = await getDetranTrack();
-
-  return track.modules.flatMap((module) =>
-    module.lessons.map((lesson) => ({
-      trackSlug: track.slug,
-      moduleSlug: module.slug,
-      lessonSlug: lesson.slug,
-    })),
-  );
-}
+// generateStaticParams removed to allow dynamic SSR
 
 export default async function LessonPage({ params }: Props) {
   const { trackSlug, moduleSlug, lessonSlug } = await params;
@@ -38,18 +27,18 @@ export default async function LessonPage({ params }: Props) {
   const neighbors = await getLessonNeighbors(moduleSlug, lessonSlug);
 
   if (trackSlug !== track.slug || !lesson) {
-    return <main className="p-8">Aula não encontrada.</main>;
+    return <main className="p-8 text-foreground">Aula não encontrada.</main>;
   }
 
   const currentPath = `/tracks/${trackSlug}/${moduleSlug}/${lessonSlug}`;
 
   return (
-    <main className="min-h-screen bg-zinc-50">
+    <main className="min-h-screen bg-background">
       <div className="mx-auto grid w-full max-w-7xl gap-5 px-6 py-6 lg:grid-cols-[300px_1fr]">
-        <aside className="h-fit rounded-md border bg-white p-4 lg:sticky lg:top-6">
+        <aside className="h-fit rounded-lg border border-border bg-card p-4 shadow-sm lg:sticky lg:top-6">
           <Link
             href={`/tracks/${track.slug}`}
-            className="inline-flex items-center gap-2 text-sm font-medium text-zinc-600 hover:text-zinc-950"
+            className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
           >
             <ArrowLeft className="size-4" />
             Voltar para trilha
@@ -57,7 +46,7 @@ export default async function LessonPage({ params }: Props) {
           <nav className="mt-5 space-y-4">
             {track.modules.map((module) => (
               <section key={module.slug}>
-                <h2 className="px-2 text-xs font-semibold uppercase tracking-wide text-zinc-500">
+                <h2 className="px-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
                   {module.title}
                 </h2>
                 <div className="mt-2 space-y-1">
@@ -70,10 +59,10 @@ export default async function LessonPage({ params }: Props) {
                         key={item.slug}
                         href={`/tracks/${track.slug}/${module.slug}/${item.slug}`}
                         className={
-                          "block rounded-md px-2 py-1.5 text-sm " +
+                          "block rounded-md px-2 py-1.5 text-sm transition-colors " +
                           (isActive
-                            ? "bg-zinc-950 text-white"
-                            : "text-zinc-700 hover:bg-zinc-100")
+                            ? "bg-primary text-primary-foreground font-medium"
+                            : "text-muted-foreground hover:bg-secondary hover:text-secondary-foreground")
                         }
                       >
                         {item.title}
@@ -86,37 +75,35 @@ export default async function LessonPage({ params }: Props) {
           </nav>
         </aside>
 
-        <article className="rounded-md border bg-white">
-          <header className="border-b p-6">
-            <p className="text-sm font-medium text-zinc-500">{lesson.moduleTitle}</p>
-            <h1 className="mt-2 text-3xl font-semibold tracking-tight text-zinc-950">
+        <article className="rounded-lg border border-border bg-card shadow-sm">
+          <header className="border-b border-border p-6">
+            <p className="text-sm font-medium text-muted-foreground">{lesson.moduleTitle}</p>
+            <h1 className="mt-2 text-3xl font-semibold tracking-tight text-card-foreground">
               {lesson.title}
             </h1>
             <div className="mt-5 flex flex-wrap gap-3">
               <form action={markLessonCompleteAction}>
                 <input type="hidden" name="lessonSlug" value={lesson.slug} />
                 <input type="hidden" name="path" value={currentPath} />
-                <Button type="submit" variant="outline">
-                  <CheckCircle2 />
+                <Button type="submit" variant="outline" className="gap-2">
+                  <CheckCircle2 className="size-4" />
                   Marcar progresso
                 </Button>
               </form>
-              <Button asChild variant="ghost">
+              <Button asChild variant="ghost" className="gap-2">
                 <Link href="/simulator/dashboard">
                   Abrir simulador
-                  <ExternalLink />
+                  <ExternalLink className="size-4" />
                 </Link>
               </Button>
             </div>
           </header>
 
-          <div className="lesson-markdown p-6">
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>
-              {lesson.content}
-            </ReactMarkdown>
+          <div className="p-6">
+            <MarkdownText content={lesson.content} />
           </div>
 
-          <footer className="flex flex-col gap-3 border-t p-6 sm:flex-row sm:justify-between">
+          <footer className="flex flex-col gap-3 border-t border-border p-6 sm:flex-row sm:justify-between">
             {neighbors.previous ? (
               <Button asChild variant="outline">
                 <Link

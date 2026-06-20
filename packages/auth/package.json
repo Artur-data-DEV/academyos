@@ -10,8 +10,9 @@
   "dependencies": {
     "@academyos/database": "workspace:*",
     "@auth/prisma-adapter": "^2.4.1",
+    "next": "16.2.9",
     "next-auth": "5.0.0-beta.19",
-    "next": "16.2.9"
+    "zod": "^4.3.6"
   },
   "devDependencies": {
     "typescript": "^5.9.3"

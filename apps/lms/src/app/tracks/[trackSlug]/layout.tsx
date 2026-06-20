@@ -6,7 +6,7 @@ export default function TrackLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-900">
+    <div className="min-h-screen bg-background text-foreground">
       {children}
     </div>
   );

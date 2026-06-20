@@ -1,97 +1,149 @@
 # AcademyOS Monorepo
 
-Plataforma EdTech B2B/B2C focada em Certificações de TI (AWS, Azure, ServiceNow), unificando um **LMS (Portal do Aluno)** e um **Simulador Adaptativo**.
+Plataforma EdTech B2B/B2C focada em Certificações de TI (AWS, Azure, ServiceNow), unificando um **LMS (Portal do Aluno)** e um **Simulador Adaptativo Nexa**.
 
-O projeto utiliza a arquitetura de **Monorepo com Turborepo**, permitindo o compartilhamento escalável de componentes, configurações, banco de dados e estado global entre os aplicativos.
+Monorepo **Turborepo + pnpm** para compartilhar design system, autenticação, banco de dados e estado entre aplicativos.
 
----
-
-## 🏗️ Estrutura da Arquitetura
-
-O ecossistema está dividido em **Aplicativos** (Frontends) e **Pacotes** (Bibliotecas internas compartilhadas).
-
-### 🖥️ Aplicativos (`apps/`)
-
-- **`apps/lms`**: O portal web de cursos (Next.js 16+). Gerencia Trilhas, Módulos, Aulas e a vitrine.
-- **`apps/simulator`**: O motor do simulador adaptativo (Next.js 16+). Lê o banco de questões, aplica lógica de exame e registra `Attempts`. Funciona como produto irmão do LMS (sessão compartilhada).
-
-> **Nota sobre Serviços:** Ambos os apps possuem uma pasta `src/services/`. Nenhuma UI acessa o banco de dados diretamente; tudo é canalizado via services para facilitar um futuro desacoplamento de backend.
-
-### 📦 Pacotes Compartilhados (`packages/`)
-
-- **`@academyos/ui`**: Design System semântico unificado (Radix UI + TailwindCSS). Exporta botões, cards, badges e progresso que reagem ao Light/Dark mode em qualquer app.
-- **`@academyos/store`**: Gerenciamento de Estado Global super leve via **Zustand**. Contém stores dedicadas (ex: `simulator-store.ts`) para lidar com navegação de questões e score em Client Components sem forçar Providers pesados na raiz.
-- **`@academyos/database`**: Ponto único de verdade para dados (Prisma ORM + PostgreSQL Neon). Expõe o `PrismaClient` já instanciado.
-- **`@academyos/auth`**: Sistema de Autenticação Centralizado (Auth.js / NextAuth v5). Garante login unificado e controle de Role Based Access (RBAC: ADMIN, INSTRUCTOR, STUDENT).
-- **`@academyos/dataset-tools`**: Ferramental de engenharia de dados, conversão de dumps e tratamento (scripts locais que operam offline e que não poluem o código dos web apps).
-- **`@academyos/config`**: Configurações canônicas de ESLint e TypeScript para toda a workspace.
+> **Status da convergência (2026-06-20):** o LMS já consome os pacotes workspace (`@academyos/ui`, `@academyos/auth`, `@academyos/database`). O Simulador ainda opera com **Supabase** e componentes UI locais — migração planejada. Detalhes em [`specs/architecture.md`](specs/architecture.md).
 
 ---
 
-## 🚀 Como Iniciar (Desenvolvimento)
+## Estrutura da Arquitetura
+
+### Aplicativos (`apps/`)
+
+| App | Pacote npm | Porta | Descrição |
+|-----|------------|-------|-----------|
+| **LMS** | `lms` | 3000 | Portal de trilhas, módulos, aulas (Tiptap), vitrine |
+| **Simulador** | `simulados-app` * | 3001 | Motor adaptativo de questões (certificações CSA, etc.) |
+
+\* Nome será alinhado a `simulator` na Fase 0 da refatoração.
+
+Nenhuma UI deve acessar o banco diretamente — canalizar via **services** / Server Actions.
+
+### Pacotes (`packages/`)
+
+| Pacote | Função |
+|--------|--------|
+| `@academyos/ui` | Design System (Radix + Tailwind v4), tema Nexa, Markdown + Mermaid |
+| `@academyos/auth` | Auth.js (NextAuth v5), RBAC (`ADMIN`, `INSTRUCTOR`, `STUDENT`) |
+| `@academyos/database` | Prisma + PostgreSQL (Neon serverless adapter) |
+| `@academyos/types` | DTOs compartilhados entre LMS e Simulador |
+| `@academyos/store` | Zustand (`useSimulatorStore`) |
+| `@academyos/config` | ESLint e TypeScript canônicos |
+| `@academyos/dataset-tools` | Scripts offline de importação/auditoria de questões |
+
+### Documentação
+
+- **Arquitetura canônica (gaps, imports, plano):** [`specs/architecture.md`](specs/architecture.md)
+- **Skill para agentes/IA:** [`skills/academyos/SKILL.md`](skills/academyos/SKILL.md)
+
+---
+
+## Como Iniciar (Desenvolvimento)
 
 ### Pré-requisitos
 
 - Node.js 18+ e [pnpm](https://pnpm.io/) v10+
-- Docker & docker-compose (para o banco local PostgreSQL)
+- Docker (PostgreSQL local opcional)
 
-### Passo a Passo
+### Passo a passo
 
-1. **Suba a infraestrutura de banco de dados:**
+1. **Infraestrutura de banco (local):**
 
    ```bash
    cd infra/docker
    docker-compose up -d
    ```
 
-2. **Instale todas as dependências do Monorepo:**
+2. **Dependências:**
 
    ```bash
    pnpm install
    ```
 
-3. **Inicie o schema do Prisma e gere as tipagens (ORM):**
+3. **Prisma (LMS / pacote database):**
 
    ```bash
    pnpm --filter @academyos/database db:push
    pnpm --filter @academyos/database db:generate
    ```
 
-4. **Inicie o ambiente de desenvolvimento usando o Turborepo:**
+4. **Desenvolvimento (ambos apps em paralelo):**
 
    ```bash
    pnpm dev
    ```
 
-> **URLs de Acesso Local:**
->
-> - LMS: [http://localhost:3000](http://localhost:3000)
-> - Simulador: [http://localhost:3001](http://localhost:3001)
+**URLs locais:**
 
-### Visualizando os Dados
+- LMS: http://localhost:3000
+- Simulador: http://localhost:3001
 
-Para ver as tabelas do banco de forma gráfica:
+**Prisma Studio:**
 
 ```bash
 pnpm --filter @academyos/database db:studio
 ```
 
+### Variáveis de ambiente
+
+| App | Variáveis principais |
+|-----|----------------------|
+| LMS | `DATABASE_URL`, `AUTH_SECRET`, providers OAuth conforme Auth.js |
+| Simulador (atual) | `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, etc. |
+| Simulador (meta) | `DATABASE_URL`, `AUTH_SECRET` (após Fase 4) |
+
 ---
 
-## 🧠 Design e Padronização
+## Design e Padronização
 
 ### UI e Tailwind
 
-Se você precisa de um componente de UI (como um Botão ou um Card), **NÃO** crie dentro de `apps/*/src/components`. O fluxo correto é:
+**Não** criar componentes genéricos em `apps/*/src/components/ui`.
 
-1. Criar o componente semântico em `packages/ui/src/`.
-2. Exportá-lo em `packages/ui/package.json`.
-3. Importá-lo no app desejado: `import { Card } from "@academyos/ui/card"`.
+1. Implementar em `packages/ui/src/`.
+2. Exportar em `packages/ui/package.json` (`exports`).
+3. Importar: `import { Card } from "@academyos/ui/card"`.
 
-### Gerenciamento de Estado
+Tema: importar `@academyos/ui/styles/globals.css` no `globals.css` do app. Evitar cores hex Nexa (`#171819`, `#FFD369`) — usar tokens CSS (`--primary`, `--ct-yellow`, etc.).
 
-Se você tem variáveis que precisam viajar profundamente por vários componentes (ex: A questão atual do Simulado ou o Tema), **NÃO** use Context API nativo. Use o **Zustand** presente no pacote `@academyos/store`.
+### Markdown e Mermaid (LMS + Simulator)
 
-### Scripts e Dumps
+Usar `@academyos/ui/markdown` — Mermaid inicializa no cliente (`dynamic import`) para não quebrar SSR.
 
-Nunca misture arquivos de dump JSON ou scripts pesados de raspagem dentro da pasta `apps/`. Qualquer processamento de dados massivo ou OCR deve acontecer exclusivamente dentro de `packages/dataset-tools/`.
+Em conteúdo `.md`, use um fenced code block com linguagem `mermaid` (ex.: `graph TD` / `flowchart LR`).
+
+### Estado global
+
+Preferir `@academyos/store` (Zustand) em vez de Context API para estado profundo (ex.: navegação do simulado).
+
+### Scripts e dumps
+
+Processamento massivo de questões e JSON dumps: **apenas** `packages/dataset-tools/`, não em `apps/`.
+
+---
+
+## Regras de importação (resumo)
+
+Ver matriz completa em [`specs/architecture.md`](specs/architecture.md#2-regras-obrigatórias-de-importação).
+
+- Apps → pacotes `@academyos/*` ✅
+- Apps → outros apps ❌
+- `@academyos/ui` → database/auth ❌
+- `new PrismaClient()` fora de `@academyos/database` ❌
+- Deep imports (`@academyos/auth/src/...`) ❌
+
+---
+
+## Scripts úteis
+
+```bash
+pnpm dev              # turbo: lms + simulator
+pnpm dev:lms          # só LMS
+pnpm dev:simulator    # só Simulador
+pnpm build            # build de todos os pacotes/apps
+pnpm lint
+pnpm typecheck
+pnpm import:detran    # import trilha Detran no LMS
+```

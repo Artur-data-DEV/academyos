@@ -12,21 +12,19 @@ declare module 'next-auth' {
   }
 }
 
-export const { handlers, auth, signIn, signOut } = NextAuth({
+export const baseAuthConfig = {
   adapter: PrismaAdapter(prisma),
-  providers: [
-    // Providers devem ser configurados nos apps específicos ou injetados aqui via env vars
-  ],
+  providers: [],
   callbacks: {
-    session({ session, user }) {
+    session({ session, user }: any) {
       if (session.user && user) {
         session.user.id = user.id;
-        // Precisamos garantir que role e organizationId venham do banco
-        // O PrismaAdapter estende o User com esses campos se estiverem no schema
-        session.user.role = (user as any).role || 'STUDENT';
-        session.user.organizationId = (user as any).organizationId;
+        session.user.role = user.role || 'STUDENT';
+        session.user.organizationId = user.organizationId;
       }
       return session;
     },
   },
-});
+};
+
+export const { handlers, auth, signIn, signOut } = NextAuth(baseAuthConfig);

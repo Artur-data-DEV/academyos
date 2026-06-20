@@ -30,4 +30,5 @@ export const prisma = globalThis.prisma ?? prismaClientSingleton();
 
 if (process.env.NODE_ENV !== 'production') globalThis.prisma = prisma;
 
-export * from '@prisma/client';
+export { PrismaClient, Role, LessonSourceType, ProgressStatus } from '@prisma/client';
+export type * from '@prisma/client';
