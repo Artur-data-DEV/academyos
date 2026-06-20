@@ -35,18 +35,18 @@ export default async function LessonPage({ params }: Props) {
   return (
     <main className="min-h-screen bg-background">
       <div className="mx-auto grid w-full max-w-7xl gap-5 px-6 py-6 lg:grid-cols-[300px_1fr]">
-        <aside className="h-fit rounded-lg border border-border bg-card p-4 shadow-sm lg:sticky lg:top-6">
+        <aside className="h-fit rounded-xl border border-border bg-card/80 backdrop-blur-md p-5 shadow-sm lg:sticky lg:top-6 transition-all duration-300 hover:shadow-md hover:border-primary/20">
           <Link
             href={`/tracks/${track.slug}`}
-            className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+            className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors group"
           >
-            <ArrowLeft className="size-4" />
+            <ArrowLeft className="size-4 transition-transform group-hover:-translate-x-1" />
             Voltar para trilha
           </Link>
-          <nav className="mt-5 space-y-4">
+          <nav className="mt-6 space-y-5">
             {track.modules.map((module) => (
               <section key={module.slug}>
-                <h2 className="px-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                <h2 className="px-2 text-[11px] font-bold uppercase tracking-wider text-muted-foreground/70">
                   {module.title}
                 </h2>
                 <div className="mt-2 space-y-1">
@@ -59,10 +59,10 @@ export default async function LessonPage({ params }: Props) {
                         key={item.slug}
                         href={`/tracks/${track.slug}/${module.slug}/${item.slug}`}
                         className={
-                          "block rounded-md px-2 py-1.5 text-sm transition-colors " +
+                          "block rounded-lg px-3 py-2 text-sm transition-all duration-300 " +
                           (isActive
-                            ? "bg-primary text-primary-foreground font-medium"
-                            : "text-muted-foreground hover:bg-secondary hover:text-secondary-foreground")
+                            ? "bg-primary/10 text-primary font-semibold shadow-sm ring-1 ring-primary/20"
+                            : "text-muted-foreground hover:bg-secondary/50 hover:text-foreground hover:translate-x-1")
                         }
                       >
                         {item.title}

@@ -70,25 +70,25 @@
   }
 
   .dark {
-    --background: #171819; /* Nexa bg */
+    --background: #09090b; /* Pure dark */
     --foreground: #fafafa;
-    --card: #303031; /* Nexa surface */
+    --card: #121214; /* Elevated surface */
     --card-foreground: #fafafa;
-    --popover: #303031;
+    --popover: #121214;
     --popover-foreground: #fafafa;
-    --primary: #ffd369; /* Nexa yellow */
-    --primary-foreground: #171819;
-    --secondary: #3a3b3d; /* Nexa alt bg */
+    --primary: #f59e0b; /* Vibrant Gold */
+    --primary-foreground: #09090b;
+    --secondary: #1f1f22;
     --secondary-foreground: #fafafa;
-    --muted: #3a3b3d;
+    --muted: #1f1f22;
     --muted-foreground: #a1a1aa;
-    --accent: #303031;
+    --accent: #1f1f22;
     --accent-foreground: #fafafa;
     --destructive: #7f1d1d;
     --destructive-foreground: #fafafa;
-    --border: #444; /* Nexa border */
-    --input: #444;
-    --ring: #ffd369;
+    --border: #27272a;
+    --input: #27272a;
+    --ring: #f59e0b;
   }
 }
 
